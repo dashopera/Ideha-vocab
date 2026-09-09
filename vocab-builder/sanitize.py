@@ -69,7 +69,7 @@ def main():
     if not check_only:
         print("净化: 移除 %d 处注入属性" % total_removed)
 
-    print("\n=== 内嵌版一致性（三份必须相同）===")
+    print("\n=== 内嵌版一致性（两份必须相同）===")
     emb = {rel: digests[rel] for rel in EMBEDDED}
     for rel in EMBEDDED:
         p = os.path.join(PROJECT, rel)
