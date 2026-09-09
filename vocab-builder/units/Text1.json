@@ -1,0 +1,142 @@
+{
+  "id": "Text1",
+  "title": "Text 1",
+  "note": "original 15 words from the first word list photo",
+  "words": [
+    {
+      "w": "accountable",
+      "pos": "adjective",
+      "ph": "/əˈkaʊntəbl/",
+      "def": "responsible for what you do, and expected to explain it to others",
+      "note": "Use: be accountable for something / to somebody.",
+      "ex": "Managers are accountable for their team's performance.",
+      "prompt": "A friendly office worker standing confidently in front of a large task board covered with checkmarks and notes, holding a clipboard, a small responsibility badge on the chest."
+    },
+    {
+      "w": "advise",
+      "pos": "verb",
+      "ph": "/ədˈvaɪz/",
+      "def": "to tell someone what you think they should do",
+      "note": "Use: advise somebody to do something. The noun is advice (uncountable).",
+      "ex": "I strongly advise you to book tickets early.",
+      "prompt": "A kind young woman sitting across a small cafe table, gently giving advice to another person, a small glowing lightbulb speech bubble floating between them."
+    },
+    {
+      "w": "consider",
+      "pos": "verb",
+      "ph": "/kənˈsɪdə(r)/",
+      "def": "to think carefully about something before deciding",
+      "note": "Use: consider doing something.",
+      "ex": "She is considering changing her job.",
+      "prompt": "A person sitting at a wooden desk resting chin on one hand, deep in thought, three floating thought bubbles with question marks above the head."
+    },
+    {
+      "w": "costume",
+      "pos": "noun",
+      "ph": "/ˈkɒstjuːm/",
+      "def": "clothes you wear to look like someone else, or typical of a place or period",
+      "note": "Don't mix up: custom (habit) · costume (clothes) · customer (buyer).",
+      "ex": "The actors wore traditional Chinese costumes.",
+      "prompt": "A single elaborate traditional embroidered stage costume hanging on a wooden clothing rack under a warm spotlight glow, a costume trunk nearby."
+    },
+    {
+      "w": "desperately",
+      "pos": "adverb",
+      "ph": "/ˈdespərətli/",
+      "def": "in an urgent, extreme way; with little hope left",
+      "note": "From the adjective desperate.",
+      "ex": "After losing his job, he desperately needed money.",
+      "prompt": "A person running desperately in the rain, chasing a bus that is pulling away, urgent worried expression, motion lines and splashing puddles."
+    },
+    {
+      "w": "hesitate",
+      "pos": "verb",
+      "ph": "/ˈhezɪteɪt/",
+      "def": "to pause before doing something because you feel unsure",
+      "note": "Common line: Don't hesitate to contact me.",
+      "ex": "She hesitated before answering the question.",
+      "prompt": "A person standing at a fork in a country road, one foot lifted in mid-air and not yet stepping down, looking left and right uncertainly, a suitcase in hand."
+    },
+    {
+      "w": "humiliate",
+      "pos": "verb",
+      "ph": "/hjuːˈmɪlieɪt/",
+      "def": "to make someone feel ashamed or lose their dignity",
+      "note": "Adjectives: humiliated (feeling it) · humiliating (causing it). Noun: humiliation.",
+      "ex": "He was humiliated in front of the whole class.",
+      "prompt": "A gentle scene of a person standing with head lowered and flushed pink cheeks while small paper planes and pointing arrows float around, a few onlookers in soft grey silhouettes in the background, empathetic and calm, not harsh."
+    },
+    {
+      "w": "individual",
+      "pos": "noun",
+      "ph": "/ˌɪndɪˈvɪdʒuəl/",
+      "def": "one single person, thought of separately from a group",
+      "note": "Also an adjective: individual = separate, single. Opposite idea: society.",
+      "ex": "Each individual has the right to express an opinion.",
+      "prompt": "A row of grey faceless silhouette people, and among them one single colorful warm-toned person clearly standing out, softly highlighted by a warm circle of light."
+    },
+    {
+      "w": "inspiration",
+      "pos": "noun",
+      "ph": "/ˌɪnspəˈreɪʃn/",
+      "def": "a sudden good idea, or a person or thing that gives you one",
+      "note": "Use: draw inspiration from something · be an inspiration to somebody.",
+      "ex": "Her courage is an inspiration to us all.",
+      "prompt": "A person sitting by a window looking at a warm sunrise over hills, a glowing lightbulb floating above the head, small sparkles, a pencil and notebook on the sill."
+    },
+    {
+      "w": "interrupt",
+      "pos": "verb",
+      "ph": "/ˌɪntəˈrʌpt/",
+      "def": "to stop someone while they are speaking or doing something",
+      "note": "Root: inter (between) + rupt (break) → break into the middle.",
+      "ex": "Sorry to interrupt, but there's a phone call for you.",
+      "prompt": "Two people sitting and talking across a table, while a third person steps in between them raising one hand with an apologetic wave, clearly cutting into the conversation."
+    },
+    {
+      "w": "juggle",
+      "pos": "verb",
+      "ph": "/ˈdʒʌɡl/",
+      "def": "to keep several objects in the air; to handle several tasks at the same time",
+      "note": "Common: juggle work and family.",
+      "ex": "She juggles a full-time job with raising three children.",
+      "prompt": "A busy person juggling several objects in the air at once: a small laptop, a coffee cup, a folder and a phone, trying to keep them all up, slight comedic stress."
+    },
+    {
+      "w": "resentful",
+      "pos": "adjective",
+      "ph": "/rɪˈzentfl/",
+      "def": "feeling bitter or angry about unfair treatment",
+      "note": "Use: be resentful of / about something. Verb: resent.",
+      "ex": "He felt resentful about the unfair treatment.",
+      "prompt": "A person sitting with arms crossed and a small frown, a little dark grey rain cloud hovering just above the head with tiny lightning, sulky body language."
+    },
+    {
+      "w": "routine",
+      "pos": "noun",
+      "ph": "/ruːˈtiːn/",
+      "def": "the usual fixed way you do things; a set of regular actions",
+      "note": "Common: daily routine. Also an adjective: routine = regular.",
+      "ex": "Exercise has become part of my daily routine.",
+      "prompt": "A cozy morning routine flat lay on a wooden table seen from above: an alarm clock, a toothbrush and cup, a steaming coffee mug, a small potted plant and a pair of running shoes, soft morning light."
+    },
+    {
+      "w": "self-esteem",
+      "pos": "noun",
+      "ph": "/ˌself ɪˈstiːm/",
+      "def": "the feeling that you are good and worthy; confidence in yourself",
+      "note": "Use: boost / damage somebody's self-esteem.",
+      "ex": "Praise from teachers can boost a child's self-esteem.",
+      "prompt": "A person standing tall and confident in front of a mirror, one hand on the heart, the reflection in the mirror glowing warmly with a proud gentle smile, soft golden light."
+    },
+    {
+      "w": "uncomfortably",
+      "pos": "adverb",
+      "ph": "/ʌnˈkʌmftəbli/",
+      "def": "in a way that feels awkward for the body or in a social situation",
+      "note": "Build: un + comfort + able → uncomfortable → uncomfortably.",
+      "ex": "The room was uncomfortably hot.",
+      "prompt": "A person sitting stiffly and awkwardly on a chair that is clearly too small, in a stuffy warm room with a small fan nearby, one sweat drop on the temple, embarrassed tight smile."
+    }
+  ]
+}
