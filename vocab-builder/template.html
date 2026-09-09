@@ -213,10 +213,125 @@
     .pic{height:210px;} .card.spelling .pic, .card.result .pic{height:104px;}
     .rword{font-size:26px;} header h1{font-size:16.5px;}
   }
+
+  /* ================= gate (login) ================= */
+  .gate{
+    position:fixed; inset:0; background:var(--cream); z-index:300;
+    display:flex; align-items:center; justify-content:center; padding:20px; overflow-y:auto;
+  }
+  .gate-box{
+    width:100%; max-width:380px; background:#fff; border-radius:22px;
+    padding:30px 24px 24px; box-shadow:0 16px 40px rgba(61,107,82,.18); text-align:center;
+  }
+  .gate-box .lock{font-size:40px;}
+  .gate-box h2{color:var(--green-dark); font-size:19px; margin:8px 0 4px;}
+  .gate-box .hint{font-size:12.5px; color:var(--muted); margin-bottom:20px; line-height:1.7;}
+  .field{text-align:left; margin-bottom:14px;}
+  .field label{display:block; font-size:11.5px; font-weight:700; color:var(--muted);
+    letter-spacing:.5px; text-transform:uppercase; margin-bottom:5px;}
+  .field input,.field select,.field textarea{
+    width:100%; padding:12px 13px; border-radius:12px; border:2px solid var(--cream2);
+    background:var(--cream); color:var(--ink); font-size:15px; font-family:inherit;
+  }
+  .field input:focus,.field select:focus,.field textarea:focus{outline:none; border-color:var(--green);}
+  .gate-msg{min-height:20px; font-size:13px; font-weight:600; margin-bottom:10px;}
+  .gate-msg.bad{color:var(--red);} .gate-msg.ok{color:var(--green);}
+  .gate-links{margin-top:14px; font-size:12.5px; color:var(--muted);}
+  .gate-links a{color:var(--green-dark); text-decoration:underline; cursor:pointer;}
+
+  /* ================= user chip in header ================= */
+  .who{
+    display:flex; align-items:center; gap:8px; margin-bottom:10px;
+    background:#fff; border-radius:12px; padding:8px 12px;
+    box-shadow:0 3px 8px rgba(61,107,82,.08); font-size:12.5px; color:var(--muted);
+  }
+  .who b{color:var(--green-dark); font-size:13.5px;}
+  .who .role{background:var(--cream2); color:var(--green-dark); font-size:10.5px; font-weight:700;
+    padding:2px 8px; border-radius:999px; text-transform:uppercase; letter-spacing:.4px;}
+  .who .sp{margin-left:auto; display:flex; gap:6px;}
+  .who button{
+    background:none; border:1.5px solid var(--green); color:var(--green-dark);
+    border-radius:8px; padding:4px 10px; font-size:11.5px; font-weight:600; cursor:pointer;
+  }
+  .who button:active{transform:scale(.95);}
+
+  /* ================= admin panel ================= */
+  .admin{
+    position:fixed; inset:0; background:var(--cream); z-index:250;
+    display:none; overflow-y:auto;
+  }
+  .admin.open{display:block;}
+  .admin-inner{max-width:560px; margin:0 auto; padding:20px 16px 40px;}
+  .admin-head{
+    background:var(--green); color:#fff; border-radius:18px; padding:16px 20px;
+    display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;
+    box-shadow:var(--card-shadow);
+  }
+  .admin-head h2{font-size:17px;}
+  .admin-head .sub{font-size:11.5px; opacity:.85; margin-top:3px;}
+  .admin-head button{
+    background:rgba(255,255,255,.18); border:none; color:#fff; border-radius:10px;
+    padding:8px 14px; font-size:13px; font-weight:600; cursor:pointer;
+  }
+  .panel{background:#fff; border-radius:18px; padding:16px; margin-bottom:14px; box-shadow:0 3px 10px rgba(61,107,82,.08);}
+  .panel h3{font-size:14.5px; color:var(--green-dark); margin-bottom:4px;}
+  .panel .desc{font-size:11.5px; color:var(--muted); line-height:1.7; margin-bottom:12px;}
+  .row{display:flex; gap:8px; align-items:center; flex-wrap:wrap;}
+  .row .field{flex:1; min-width:130px; margin-bottom:0;}
+  .btn-sm{
+    padding:10px 14px; border-radius:11px; border:none; font-size:13px; font-weight:700;
+    cursor:pointer; color:#fff; background:var(--green); white-space:nowrap;
+  }
+  .btn-sm.warn{background:var(--orange);}
+  .btn-sm.danger{background:var(--red);}
+  .btn-sm.ghost{background:#fff; color:var(--green-dark); border:2px solid var(--green);}
+  .btn-sm:active{transform:scale(.96);}
+  .list{margin-top:12px; display:flex; flex-direction:column; gap:8px;}
+  .item{
+    background:var(--cream); border-radius:12px; padding:10px 12px;
+    display:flex; align-items:center; gap:10px; font-size:13.5px;
+  }
+  .item .nm{font-weight:700; color:var(--green-dark);}
+  .item .meta{font-size:11.5px; color:var(--muted);}
+  .item .act{margin-left:auto; display:flex; gap:6px; flex-shrink:0;}
+  .item .act button{
+    background:none; border:1.5px solid var(--cream2); border-radius:8px;
+    padding:4px 9px; font-size:11.5px; cursor:pointer; color:var(--muted);
+  }
+  .item .act button.del{border-color:var(--red); color:var(--red);}
+  .bar{height:8px; background:var(--cream2); border-radius:999px; overflow:hidden; margin-top:5px;}
+  .bar i{display:block; height:100%; background:var(--green); border-radius:999px;}
+  .warnbox{
+    background:#fdf3e7; border-left:4px solid var(--orange); border-radius:10px;
+    padding:11px 13px; font-size:12px; color:#8a6a3f; line-height:1.75; margin-bottom:14px;
+  }
+  .stat-grid{display:grid; grid-template-columns:1fr; gap:10px; margin-top:10px;}
+  .stat-card{background:var(--cream); border-radius:12px; padding:12px 14px;}
+  .stat-card .who-line{display:flex; align-items:baseline; gap:8px; margin-bottom:6px;}
+  .stat-card .who-line b{color:var(--green-dark); font-size:14.5px;}
+  .stat-card .who-line span{font-size:11.5px; color:var(--muted); margin-left:auto;}
+  .empty{font-size:12.5px; color:var(--muted); padding:12px 0; text-align:center;}
+  .modal{
+    position:fixed; inset:0; background:rgba(30,28,24,.6); z-index:400;
+    display:none; align-items:center; justify-content:center; padding:20px;
+  }
+  .modal.open{display:flex;}
+  .modal-box{background:#fff; border-radius:18px; padding:22px; width:100%; max-width:400px; max-height:80vh; overflow-y:auto;}
+  .modal-box h3{font-size:15.5px; color:var(--green-dark); margin-bottom:12px;}
+  .modal-actions{display:flex; gap:10px; margin-top:16px;}
+  .modal-actions .btn-sm{flex:1;}
 </style>
 </head>
 <body>
 <div class="app">
+  <div class="who" id="whoBar" style="display:none">
+    <span>👤</span><b id="whoName"></b><span class="role" id="whoRole"></span>
+    <span class="sp">
+      <button id="btnAdmin" style="display:none">⚙ 管理</button>
+      <button id="btnLogout">退出</button>
+    </span>
+  </div>
+
   <header>
     <div>
       <h1>📗 Vocabulary Practice</h1>
@@ -320,7 +435,7 @@
 
   <div class="brand">
     <span class="dedi">For all of our loved ones.</span><br>
-    Made by <b>Da Sheng</b><span class="sep">|</span><span class="ver">ver 1.0</span>
+    Made by <b>Da Sheng</b><span class="sep">|</span><span class="ver">ver 1.1</span>
   </div>
 </div>
 
@@ -329,8 +444,112 @@
   <div class="cap" id="lbCap"></div>
 </div>
 
+<!-- ================= login gate ================= -->
+<div class="gate" id="gate">
+  <div class="gate-box">
+    <div class="lock">🔐</div>
+    <h2>Vocabulary Practice</h2>
+    <div class="hint" id="gateHint">Who is practising today?</div>
+
+    <div class="field" id="pickWrap">
+      <label id="pickLabel">Account</label>
+      <select id="gateUser"></select>
+      <input id="gateNewUser" placeholder="管理员用户名（英文或中文）" autocomplete="username" style="display:none">
+    </div>
+    <div class="field">
+      <label id="passLabel">Password</label>
+      <input type="password" id="gatePass" autocomplete="current-password" placeholder="••••••">
+    </div>
+
+    <div class="gate-msg" id="gateMsg"></div>
+    <button class="btn know" id="gateGo" style="width:100%">Log in</button>
+
+    <div class="gate-links">
+      <a id="linkImport">导入备份 / 忘记密码</a>
+    </div>
+  </div>
+</div>
+
+<!-- ================= admin panel ================= -->
+<div class="admin" id="admin">
+  <div class="admin-inner">
+    <div class="admin-head">
+      <div>
+        <h2>⚙ 管理后台</h2>
+        <div class="sub" id="adminSub"></div>
+      </div>
+      <button id="adminClose">返回学习</button>
+    </div>
+
+    <div class="warnbox">
+      <b>数据安全边界（务必知晓）</b><br>
+      本应用没有服务器，全部数据只存在<b>这台设备的浏览器里</b>。因此：<br>
+      ① 这里的登录是<b>门禁</b>不是认证 —— 懂浏览器控制台的人可以绕过，请勿用于存放敏感信息；<br>
+      ② 在此处的任何修改<b>只影响这台设备</b>，不会同步到手机或其他电脑；<br>
+      ③ 跨设备同步请用下方「导出 / 导入数据」。
+    </div>
+
+    <div class="panel">
+      <h3>👥 用户账号</h3>
+      <div class="desc">本应用最多支持若干家庭成员各用一个账号，进度互相隔离、互不可见。</div>
+      <div class="row">
+        <div class="field"><input id="newUser" placeholder="新用户名" autocomplete="off"></div>
+        <div class="field"><input id="newPass" type="password" placeholder="初始密码" autocomplete="new-password"></div>
+        <button class="btn-sm" id="btnAddUser">新增</button>
+      </div>
+      <div class="list" id="userList"></div>
+    </div>
+
+    <div class="panel">
+      <h3>📖 词表管理</h3>
+      <div class="desc">在线增删改单词，改动<b>即时生效</b>（仅本机）。改完可导出 JSON 交给我合并进正式版本。</div>
+      <div class="row" style="margin-bottom:12px">
+        <div class="field"><select id="admUnit"></select></div>
+        <button class="btn-sm" id="btnAddUnit">新增单元</button>
+      </div>
+      <div class="list" id="wordList"></div>
+      <div class="row" style="margin-top:14px">
+        <button class="btn-sm ghost" id="btnAddWord">＋ 添加单词</button>
+        <button class="btn-sm warn" id="btnResetUnits">还原为内置词表</button>
+      </div>
+    </div>
+
+    <div class="panel">
+      <h3>📊 学习进度统计</h3>
+      <div class="desc">仅统计<b>本机</b>数据。其他设备上的进度需要对方导出后由你导入。</div>
+      <div class="stat-grid" id="statGrid"></div>
+    </div>
+
+    <div class="panel">
+      <h3>💾 数据导出 / 导入</h3>
+      <div class="desc">导出为一个 JSON 文件（含账号、词表改动、学习进度）。在另一台设备导入即可同步。</div>
+      <div class="row">
+        <button class="btn-sm" id="btnExport">导出 JSON</button>
+        <button class="btn-sm ghost" id="btnImport">导入 JSON</button>
+        <input type="file" id="fileInput" accept=".json,application/json" style="display:none">
+      </div>
+      <div class="row" style="margin-top:12px">
+        <button class="btn-sm danger" id="btnWipe">清空本机全部数据</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= generic modal ================= -->
+<div class="modal" id="modal">
+  <div class="modal-box">
+    <h3 id="modalTitle"></h3>
+    <div id="modalBody"></div>
+    <div class="modal-actions">
+      <button class="btn-sm ghost" id="modalCancel">取消</button>
+      <button class="btn-sm" id="modalOk">确定</button>
+    </div>
+  </div>
+</div>
+
 <script>
-const UNITS = /*__UNITDATA__*/ [];
+const BUILTIN = /*__UNITDATA__*/ [];
+let UNITS = [];
 
 let ui = 0, order = [], idx = 0, state = "guess";
 let mastered = new Set();
@@ -338,6 +557,405 @@ const $ = id => document.getElementById(id);
 const U = () => UNITS[ui];
 const WS = () => U().words;
 const cur = () => WS()[order[idx]];
+
+/* ============================================================
+   Local account gate + admin console
+   ------------------------------------------------------------
+   There is NO server. All data lives in this browser's localStorage.
+   The login below is a DOOR LOCK, not authentication: anyone who opens
+   devtools can walk past it. It exists to keep separate learners' progress
+   apart on a shared device, not to protect secrets.
+   Passwords are salted SHA-256; crypto.subtle is unusable on file:// so a
+   compact pure-JS SHA-256 is included below.
+   ============================================================ */
+
+const LS = {
+  get(k, d){ try{ const v = localStorage.getItem(k); return v === null ? d : JSON.parse(v); }catch(e){ return d; } },
+  set(k, v){ try{ localStorage.setItem(k, JSON.stringify(v)); return true; }catch(e){ return false; } },
+  del(k){ try{ localStorage.removeItem(k); }catch(e){} },
+  keys(){ try{ return Object.keys(localStorage); }catch(e){ return []; } }
+};
+const K_USERS = 'mmv_users', K_SESS = 'mmv_session', K_UNITS = 'mmv_units', K_PROG = 'mmv_prog_';
+const esc = s => String(s == null ? '' : s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+
+/* ---- SHA-256, pure JS (works under file:// where crypto.subtle is absent) ---- */
+const _K256 = [0x428a2f98,0x71374491,0xb5c0fbcf,0xe9b5dba5,0x3956c25b,0x59f111f1,0x923f82a4,0xab1c5ed5,0xd807aa98,0x12835b01,0x243185be,0x550c7dc3,0x72be5d74,0x80deb1fe,0x9bdc06a7,0xc19bf174,0xe49b69c1,0xefbe4786,0x0fc19dc6,0x240ca1cc,0x2de92c6f,0x4a7484aa,0x5cb0a9dc,0x76f988da,0x983e5152,0xa831c66d,0xb00327c8,0xbf597fc7,0xc6e00bf3,0xd5a79147,0x06ca6351,0x14292967,0x27b70a85,0x2e1b2138,0x4d2c6dfc,0x53380d13,0x650a7354,0x766a0abb,0x81c2c92e,0x92722c85,0xa2bfe8a1,0xa81a664b,0xc24b8b70,0xc76c51a3,0xd192e819,0xd6990624,0xf40e3585,0x106aa070,0x19a4c116,0x1e376c08,0x2748774c,0x34b0bcb5,0x391c0cb3,0x4ed8aa4a,0x5b9cca4f,0x682e6ff3,0x748f82ee,0x78a5636f,0x84c87814,0x8cc70208,0x90befffa,0xa4506ceb,0xbef9a3f7,0xc67178f2];
+function sha256(str){
+  const rotr = (x,n) => ((x >>> n) | (x << (32 - n))) >>> 0;
+  const bytes = new TextEncoder().encode(str), ml = bytes.length;
+  const total = Math.ceil((ml + 9) / 64) * 64;
+  const buf = new Uint8Array(total);
+  buf.set(bytes); buf[ml] = 0x80;
+  const bits = ml * 8, hi = Math.floor(bits / 4294967296), lo = bits >>> 0;
+  for(let i = 0; i < 4; i++){ buf[total-8+i] = (hi >>> (24-i*8)) & 255; buf[total-4+i] = (lo >>> (24-i*8)) & 255; }
+  let H = [0x6a09e667,0xbb67ae85,0x3c6ef372,0xa54ff53a,0x510e527f,0x9b05688c,0x1f83d9ab,0x5be0cd19];
+  const w = new Array(64);
+  for(let b = 0; b < total; b += 64){
+    for(let i = 0; i < 16; i++) w[i] = (buf[b+i*4] << 24) | (buf[b+i*4+1] << 16) | (buf[b+i*4+2] << 8) | buf[b+i*4+3];
+    for(let i = 16; i < 64; i++){
+      const s0 = rotr(w[i-15],7) ^ rotr(w[i-15],18) ^ (w[i-15] >>> 3);
+      const s1 = rotr(w[i-2],17) ^ rotr(w[i-2],19) ^ (w[i-2] >>> 10);
+      w[i] = (w[i-16] + s0 + w[i-7] + s1) | 0;
+    }
+    let a=H[0],bb=H[1],c=H[2],d=H[3],e=H[4],f=H[5],g=H[6],h=H[7];
+    for(let i = 0; i < 64; i++){
+      const S1 = rotr(e,6) ^ rotr(e,11) ^ rotr(e,25);
+      const ch = (e & f) ^ (~e & g);
+      const t1 = (h + S1 + ch + _K256[i] + w[i]) | 0;
+      const S0 = rotr(a,2) ^ rotr(a,13) ^ rotr(a,22);
+      const mj = (a & bb) ^ (a & c) ^ (bb & c);
+      const t2 = (S0 + mj) | 0;
+      h=g; g=f; f=e; e=(d+t1)|0; d=c; c=bb; bb=a; a=(t1+t2)|0;
+    }
+    H = [(H[0]+a)|0,(H[1]+bb)|0,(H[2]+c)|0,(H[3]+d)|0,(H[4]+e)|0,(H[5]+f)|0,(H[6]+g)|0,(H[7]+h)|0];
+  }
+  return H.map(x => (x >>> 0).toString(16).padStart(8,'0')).join('');
+}
+
+/* ---- accounts ---- */
+const getUsers = () => LS.get(K_USERS, null) || {};
+const saveUsers = u => LS.set(K_USERS, u);
+const newSalt = () => Math.random().toString(36).slice(2) + Date.now().toString(36);
+const hashPass = (pw, salt) => sha256(salt + '|' + pw);
+const userCount = () => Object.keys(getUsers()).length;
+let SESSION = null;
+
+/* ---- word list: the admin edits are stored WITHOUT images (base64 would blow
+   the 5 MB localStorage budget); images are re-attached from the built-in data. ---- */
+function saveUnits(){
+  LS.set(K_UNITS, UNITS.map(u => ({ ...u, words: u.words.map(w => ({ ...w, img: '' })) })));
+}
+function applyOverride(base, ov){
+  if(!ov || !ov.length) return base.map(u => ({ ...u, words: u.words.map(w => ({ ...w })) }));
+  return ov.map(u => {
+    const src = base.find(b => b.id === u.id);
+    const imgMap = {};
+    if(src) src.words.forEach(w => imgMap[w.w] = w.img);
+    return { ...u, words: u.words.map(w => ({ ...w, img: w.img || (imgMap[w.w] || '') })) };
+  });
+}
+
+/* move pre-account progress (vocab_done_<unit>) under the current user */
+function migrateProgress(){
+  const u = SESSION ? SESSION.user : 'anon';
+  LS.keys().filter(k => k.indexOf('vocab_done_') === 0).forEach(k=>{
+    const id = k.slice('vocab_done_'.length);
+    LS.set(K_PROG + u + '__' + id, LS.get(k, []));
+    LS.del(k);
+  });
+}
+
+/* ================= gate ================= */
+function showGate(){
+  $('gate').style.display = 'flex';
+  $('whoBar').style.display = 'none';
+  const users = getUsers(), names = Object.keys(users);
+  const first = !names.length;
+  $('pickLabel').textContent = first ? '管理员用户名' : 'Account';
+  $('passLabel').textContent = first ? '设置密码（至少 4 位）' : 'Password';
+  $('gateUser').style.display  = first ? 'none' : '';
+  $('gateNewUser').style.display = first ? '' : 'none';
+  $('gatePass').placeholder = first ? '至少 4 位' : '••••••';
+  $('gateHint').textContent = first
+    ? '还没有账号。先创建管理员账号，之后可在管理后台添加家人。'
+    : 'Who is practising today?';
+  $('gateGo').textContent = first ? '创建管理员账号' : 'Log in';
+  $('gateUser').innerHTML = names.map(n => `<option value="${esc(n)}">${esc(n)}</option>`).join('');
+  $('gateMsg').textContent = '';
+  $('gatePass').value = '';
+  setTimeout(()=> (first ? $('gateNewUser') : $('gatePass')).focus(), 60);
+}
+function gateFail(msg){ $('gateMsg').textContent = msg; $('gateMsg').className = 'gate-msg bad'; }
+function gateOk(msg){ $('gateMsg').textContent = msg; $('gateMsg').className = 'gate-msg ok'; }
+
+$('gateGo').onclick = ()=>{
+  const pw = $('gatePass').value;
+  if(pw.length < 4) return gateFail('Password must be at least 4 characters.');
+  if(!userCount()){
+    // create the first account: it becomes the administrator
+    const name = ($('gateNewUser').value || '').trim() || 'admin';
+    if(/__/.test(name)) return gateFail('Username cannot contain "__".');
+    const salt = newSalt();
+    const users = { [name]: { salt, hash: hashPass(pw, salt), role: 'admin', created: new Date().toISOString() } };
+    saveUsers(users);
+    startSession(name, 'admin');
+    return;
+  }
+  const name = $('gateUser').value;
+  const u = getUsers()[name];
+  if(!u) return gateFail('Account not found.');
+  if(hashPass(pw, u.salt) !== u.hash) return gateFail('Wrong password.');
+  startSession(name, u.role);
+};
+$('gatePass').addEventListener('keydown', e=>{ if(e.key === 'Enter') $('gateGo').click(); });
+/* recovery door: importing a backup works without being logged in, otherwise a
+   forgotten admin password would lock the app forever (there is no server to reset it) */
+$('linkImport').onclick = ()=> $('fileInput').click();
+
+function startSession(name, role){
+  SESSION = { user: name, role: role };
+  LS.set(K_SESS, SESSION);
+  UNITS = applyOverride(BUILTIN, LS.get(K_UNITS, null));
+  migrateProgress();          // carry over progress saved before accounts existed
+  $('gate').style.display = 'none';
+  $('whoBar').style.display = 'flex';
+  $('whoName').textContent = name;
+  $('whoRole').textContent = role === 'admin' ? 'admin' : 'learner';
+  $('btnAdmin').style.display = role === 'admin' ? '' : 'none';
+  ui = 0;
+  loadUnit(0);
+}
+$('btnLogout').onclick = ()=>{
+  SESSION = null; LS.del(K_SESS);
+  $('admin').classList.remove('open');
+  showGate();
+};
+$('btnAdmin').onclick = ()=>{ renderAdmin(); $('admin').classList.add('open'); };
+$('adminClose').onclick = ()=> $('admin').classList.remove('open');
+
+/* ================= modal ================= */
+function openModal(title, bodyHtml, onOk){
+  $('modalTitle').textContent = title;
+  $('modalBody').innerHTML = bodyHtml;
+  $('modal').classList.add('open');
+  $('modalOk').onclick = ()=>{ if(onOk() !== false) $('modal').classList.remove('open'); };
+}
+$('modalCancel').onclick = ()=> $('modal').classList.remove('open');
+$('modal').onclick = e=>{ if(e.target === $('modal')) $('modal').classList.remove('open'); };
+
+/* ================= admin: users ================= */
+function renderUsers(){
+  const users = getUsers();
+  const names = Object.keys(users);
+  $('userList').innerHTML = names.length ? names.map(n => {
+    const u = users[n];
+    return `<div class="item">
+      <div>
+        <div class="nm">${esc(n)} <span class="meta">· ${esc(u.role)}</span></div>
+        <div class="meta">created ${(u.created||'').slice(0,10)}</div>
+      </div>
+      <div class="act">
+        <button data-act="pw" data-n="${esc(n)}">改密码</button>
+        <button data-act="role" data-n="${esc(n)}">${u.role === 'admin' ? '设为普通' : '设为管理员'}</button>
+        <button class="del" data-act="del" data-n="${esc(n)}">删除</button>
+      </div>
+    </div>`;
+  }).join('') : '<div class="empty">还没有账号</div>';
+
+  $('userList').querySelectorAll('button').forEach(b=>{
+    b.onclick = ()=>{
+      const n = b.dataset.n, act = b.dataset.act, users = getUsers();
+      if(act === 'pw'){
+        openModal('重设密码 · ' + n,
+          `<div class="field"><label>新密码</label><input id="mf_pw" type="password" placeholder="至少 4 位"></div>`,
+          ()=>{
+            const v = $('mf_pw').value;
+            if(v.length < 4){ alert('密码至少 4 位'); return false; }
+            users[n].salt = newSalt(); users[n].hash = hashPass(v, users[n].salt);
+            saveUsers(users); renderUsers();
+          });
+      }else if(act === 'role'){
+        const adminCount = Object.values(users).filter(x=>x.role==='admin').length;
+        if(users[n].role === 'admin' && adminCount <= 1){ alert('至少要保留一个管理员'); return; }
+        users[n].role = users[n].role === 'admin' ? 'learner' : 'admin';
+        saveUsers(users); renderUsers();
+      }else if(act === 'del'){
+        if(n === SESSION.user){ alert('不能删除当前登录的账号'); return; }
+        const adminCount = Object.values(users).filter(x=>x.role==='admin').length;
+        if(users[n].role === 'admin' && adminCount <= 1){ alert('至少要保留一个管理员'); return; }
+        openModal('删除账号', `<div class="field"><label>确定删除「${esc(n)}」？其本机学习进度也会一并清除。</label></div>`,
+          ()=>{
+            delete users[n]; saveUsers(users);
+            LS.keys().filter(k=>k.startsWith(K_PROG + n + '__')).forEach(k=> LS.del(k));
+            renderUsers(); renderStats();
+          });
+      }
+    };
+  });
+}
+$('btnAddUser').onclick = ()=>{
+  const name = $('newUser').value.trim(), pw = $('newPass').value;
+  if(!name) return alert('请填写用户名');
+  if(/__/.test(name)) return alert('用户名不能包含连续两个下划线');
+  if(pw.length < 4) return alert('密码至少 4 位');
+  const users = getUsers();
+  if(users[name]) return alert('该用户名已存在');
+  const salt = newSalt();
+  users[name] = { salt, hash: hashPass(pw, salt), role: 'learner', created: new Date().toISOString() };
+  saveUsers(users);
+  $('newUser').value = ''; $('newPass').value = '';
+  renderUsers();
+};
+
+/* ================= admin: word list ================= */
+let admUnitIdx = 0;
+function renderAdmUnits(){
+  $('admUnit').innerHTML = UNITS.map((u,i)=>`<option value="${i}">${esc(u.title)}（${u.words.length} 词）</option>`).join('');
+  $('admUnit').value = admUnitIdx;
+}
+function renderAdmWords(){
+  const u = UNITS[admUnitIdx];
+  if(!u){ $('wordList').innerHTML = '<div class="empty">还没有单元</div>'; return; }
+  $('wordList').innerHTML = u.words.length ? u.words.map((w,i)=>`
+    <div class="item">
+      <div style="min-width:0">
+        <div class="nm">${esc(w.w)} <span class="meta">${esc(w.pos||'')} ${esc(w.ph||'')}</span></div>
+        <div class="meta">${esc((w.def||'').slice(0,64))}</div>
+      </div>
+      <div class="act">
+        <button data-i="${i}">编辑</button>
+        <button class="del" data-del="${i}">删除</button>
+      </div>
+    </div>`).join('') : '<div class="empty">该单元还没有单词</div>';
+
+  $('wordList').querySelectorAll('button[data-i]').forEach(b=>{
+    b.onclick = ()=> editWord(admUnitIdx, +b.dataset.i);
+  });
+  $('wordList').querySelectorAll('button[data-del]').forEach(b=>{
+    b.onclick = ()=>{
+      const i = +b.dataset.del, w = UNITS[admUnitIdx].words[i];
+      openModal('删除单词', `<div class="field"><label>确定删除「${esc(w.w)}」？</label></div>`, ()=>{
+        UNITS[admUnitIdx].words.splice(i,1);
+        saveUnits(); UNITS = applyOverride(BUILTIN, LS.get(K_UNITS,null));
+        renderAdmUnits(); renderAdmWords(); reloadLearn();
+      });
+    };
+  });
+}
+const W_FIELDS = [['w','单词'],['pos','词性'],['ph','音标'],['def','英文释义'],['note','用法提示'],['ex','例句']];
+function editWord(uidx, widx){
+  const u = UNITS[uidx], isNew = widx === null;
+  const d = isNew ? {w:'',pos:'',ph:'',def:'',note:'',ex:''} : u.words[widx];
+  const html = W_FIELDS.map(([k,lab])=>
+    `<div class="field"><label>${lab}</label><input id="mf_${k}" value="${esc(d[k]||'')}" autocomplete="off"></div>`).join('');
+  openModal(isNew ? '添加单词' : '编辑 · ' + (d.w||''), html, ()=>{
+    const obj = {};
+    W_FIELDS.forEach(([k])=> obj[k] = $('mf_'+k).value.trim());
+    if(!obj.w) { alert('单词不能为空'); return false; }
+    obj.w = obj.w.toLowerCase();
+    if(isNew){
+      obj.img = '';
+      u.words.push(obj);
+    }else{
+      const old = u.words[widx];
+      u.words[widx] = { ...old, ...obj };
+    }
+    saveUnits(); UNITS = applyOverride(BUILTIN, LS.get(K_UNITS,null));
+    renderAdmUnits(); renderAdmWords(); reloadLearn();
+  });
+}
+$('admUnit').onchange = e=>{ admUnitIdx = +e.target.value; renderAdmWords(); };
+$('btnAddWord').onclick = ()=>{ if(!UNITS[admUnitIdx]) return alert('请先新增单元'); editWord(admUnitIdx, null); };
+$('btnAddUnit').onclick = ()=>{
+  openModal('新增单元',
+    `<div class="field"><label>单元 ID（英文，如 Text2）</label><input id="mf_id" value="Text${UNITS.length+1}"></div>
+     <div class="field"><label>标题</label><input id="mf_title" value="Text ${UNITS.length+1}"></div>`,
+    ()=>{
+      const id = $('mf_id').value.trim(), title = $('mf_title').value.trim();
+      if(!id || !title) return false;
+      if(UNITS.some(u=>u.id===id)) { alert('该 ID 已存在'); return false; }
+      UNITS.push({ id, title, words: [] });
+      admUnitIdx = UNITS.length - 1;
+      saveUnits(); UNITS = applyOverride(BUILTIN, LS.get(K_UNITS,null));
+      renderAdmUnits(); renderAdmWords(); reloadLearn();
+    });
+};
+$('btnResetUnits').onclick = ()=>{
+  openModal('还原内置词表', `<div class="field"><label>将丢弃本机的全部词表改动，恢复为程序内置版本。</label></div>`, ()=>{
+    LS.del(K_UNITS);
+    UNITS = applyOverride(BUILTIN, null);
+    admUnitIdx = 0; renderAdmUnits(); renderAdmWords(); reloadLearn();
+  });
+};
+function reloadLearn(){
+  if(SESSION){ if(ui >= UNITS.length) ui = 0; loadUnit(ui); }
+}
+
+/* ================= admin: stats ================= */
+function renderStats(){
+  const users = getUsers();
+  const names = Object.keys(users);
+  if(!names.length){ $('statGrid').innerHTML = '<div class="empty">还没有账号</div>'; return; }
+  $('statGrid').innerHTML = names.map(n=>{
+    const rows = UNITS.map(u=>{
+      const done = (LS.get(K_PROG + n + '__' + u.id, []) || []).length;
+      const tot = u.words.length || 1;
+      const pct = Math.round(done / tot * 100);
+      return `<div style="margin-bottom:8px">
+        <div style="display:flex;font-size:12px;color:var(--muted)">
+          <span>${esc(u.title)}</span><span style="margin-left:auto">${done}/${u.words.length}</span>
+        </div>
+        <div class="bar"><i style="width:${Math.min(pct,100)}%"></i></div>
+      </div>`;
+    }).join('');
+    const total = UNITS.reduce((s,u)=> s + (LS.get(K_PROG + n + '__' + u.id, []) || []).length, 0);
+    return `<div class="stat-card">
+      <div class="who-line"><b>${esc(n)}</b><span class="meta">${esc(users[n].role)}</span><span>共掌握 ${total} 词</span></div>
+      ${rows}
+    </div>`;
+  }).join('');
+}
+
+/* ================= admin: export / import / wipe ================= */
+$('btnExport').onclick = ()=>{
+  const prog = {};
+  LS.keys().filter(k=>k.startsWith(K_PROG)).forEach(k=> prog[k] = LS.get(k, null));
+  const data = { app:'mimi-vocab', version:1, exportedAt:new Date().toISOString(),
+                 users:getUsers(), units:LS.get(K_UNITS,null), progress:prog };
+  const blob = new Blob([JSON.stringify(data,null,2)], {type:'application/json'});
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'mimi-vocab-backup-' + new Date().toISOString().slice(0,10) + '.json';
+  a.click();
+  setTimeout(()=> URL.revokeObjectURL(a.href), 2000);
+};
+$('btnImport').onclick = ()=> $('fileInput').click();
+$('fileInput').onchange = e=>{
+  const f = e.target.files[0];
+  if(!f) return;
+  const fr = new FileReader();
+  fr.onload = ()=>{
+    let data;
+    try{ data = JSON.parse(fr.result); }catch(err){ alert('不是合法的 JSON 文件'); return; }
+    if(!data || data.app !== 'mimi-vocab'){ alert('不是本应用的备份文件'); return; }
+    openModal('导入数据',
+      `<div class="field"><label>将合并账号、词表改动与学习进度。导入后本机会保留现有账号，同名账号将被覆盖。</label></div>`,
+      ()=>{
+        if(data.users) saveUsers({ ...getUsers(), ...data.users });
+        if(data.units){ LS.set(K_UNITS, data.units); }
+        if(data.progress) Object.keys(data.progress).forEach(k=> LS.set(k, data.progress[k]));
+        UNITS = applyOverride(BUILTIN, LS.get(K_UNITS,null));
+        if(ui >= UNITS.length) ui = 0;
+        if(!SESSION){ showGate(); gateOk('备份已导入 — 请用备份中的账号密码登录'); }
+        else { renderAdmin(); reloadLearn(); }
+      });
+  };
+  fr.readAsText(f);
+  e.target.value = '';
+};
+$('btnWipe').onclick = ()=>{
+  openModal('清空本机数据',
+    `<div class="field"><label>将删除本机的全部账号、词表改动与学习进度，且<b>无法恢复</b>。建议先导出备份。</label></div>`,
+    ()=>{
+      LS.keys().filter(k=>k.startsWith('mmv_') || k.startsWith('vocab_')).forEach(k=> LS.del(k));
+      location.reload();
+    });
+};
+function renderAdmin(){
+  $('adminSub').textContent = (SESSION ? SESSION.user : '') + ' · 共 ' + UNITS.length + ' 个单元 / ' +
+    UNITS.reduce((s,u)=>s+u.words.length,0) + ' 词 · ' + userCount() + ' 个账号';
+  if(admUnitIdx >= UNITS.length) admUnitIdx = 0;
+  renderUsers(); renderAdmUnits(); renderAdmWords(); renderStats();
+}
+
+/* ================= boot ================= */
+UNITS = applyOverride(BUILTIN, LS.get(K_UNITS, null));
+function boot(){
+  const s = LS.get(K_SESS, null);
+  const users = getUsers();
+  if(s && users[s.user]) startSession(s.user, users[s.user].role);
+  else showGate();
+}
 
 /* ================= voice ================= */
 const FEMALE_HINT = [["natural",100],["neural",100],["online",80],["premium",80],
@@ -407,7 +1025,7 @@ function speak(text){
 $('btnTry').onclick = ()=> speak("Good morning, what a lovely day");
 
 /* ================= units ================= */
-function storeKey(id){ return 'vocab_done_' + id; }
+function storeKey(id){ return K_PROG + (SESSION ? SESSION.user : 'anon') + '__' + id; }
 function loadDone(){
   mastered = new Set();
   try{
@@ -680,7 +1298,7 @@ function pickOpt(btn){
   setTimeout(()=>{ quiz.i++; renderQuiz(); speak(d.w); }, ok ? 1500 : 2800);
 }
 
-loadUnit(0);
+boot();
 </script>
 </body>
 </html>
