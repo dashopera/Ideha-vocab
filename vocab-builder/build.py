@@ -24,6 +24,7 @@ TPL = os.path.join(ROOT, "template.html")
 OUT = os.path.join(PROJECT, "背单词-学习卡片.html")
 INDEX = os.path.join(PROJECT, "index.html")
 SITE = os.path.join(PROJECT, "site", "index.html")  # clean copy for web publishing (no source images)
+POCKET = os.path.join(PROJECT, "米米背单词-便携版.html")  # deliverable: send this one to the learner
 SIZE, QUALITY = (720, 480), 70
 
 
@@ -74,13 +75,15 @@ def main():
     open(OUT, "w", encoding="utf-8").write(html)
     open(INDEX, "w", encoding="utf-8").write(html)  # copy at project root
     os.makedirs(os.path.dirname(SITE), exist_ok=True)
-    open(SITE, "w", encoding="utf-8").write(html)   # copy for publishing
+    open(SITE, "w", encoding="utf-8").write(html)                            # copy for publishing
+    open(POCKET, "w", encoding="utf-8").write(html)                          # deliverable copy
 
     print("built -> %s  (%.2f MB, %d units, %d words)" % (
         OUT, os.path.getsize(OUT) / 1024 / 1024, len(units),
         sum(len(u["words"]) for u in units)))
     print("         " + INDEX)
     print("         " + SITE + "   <- publish this folder")
+    print("         " + POCKET)
 
 
 if __name__ == "__main__":
