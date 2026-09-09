@@ -57,6 +57,12 @@ def main():
         u = json.load(open(fp, encoding="utf-8"))
         uid, idir = u["id"], os.path.join(IMG_DIR, u["id"])
         missing = []
+        # wipe stale thumbnails first: word order changes renumber the files,
+        # and leftovers from previous builds would accumulate forever
+        small_dir = os.path.join(idir, "small")
+        os.makedirs(small_dir, exist_ok=True)
+        for stale in glob.glob(os.path.join(small_dir, "*.jpg")):
+            os.remove(stale)
         for i, w in enumerate(u["words"], 1):
             slug = slugify(w["w"])
             cands = sorted(glob.glob(os.path.join(idir, "*_%s.png" % slug)))
@@ -103,6 +109,8 @@ def main():
         for u in units:
             src = os.path.join(IMG_DIR, u["id"], "small")
             dst = os.path.join(base, "images", u["id"])
+            if os.path.isdir(dst):
+                shutil.rmtree(dst)          # drop thumbnails from removed words
             os.makedirs(dst, exist_ok=True)
             for f in glob.glob(os.path.join(src, "*.jpg")):
                 shutil.copy2(f, dst)
