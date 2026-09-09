@@ -24,12 +24,14 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 PROJECT = os.path.dirname(HERE)
 
-TARGETS = [
+# 内嵌版（单文件）：三份必须字节级一致
+EMBEDDED = [
     "背单词-学习卡片.html",
-    "index.html",
-    "site/index.html",
     "米米背单词-便携版.html",
 ]
+# 外链版（发布用）：图片是独立文件，体积本就不同，只查污染不比对
+LINKED = ["index.html", "site/index.html"]
+TARGETS = EMBEDDED + LINKED
 
 # 预览服务注入的属性（含前后空格的各种形态）
 INJECT_RE = re.compile(r'\s+data-page-node-id="[^"]*"')
@@ -67,18 +69,22 @@ def main():
     if not check_only:
         print("净化: 移除 %d 处注入属性" % total_removed)
 
-    uniq = set(digests.values())
-    print("\n=== 四份成品一致性 ===")
-    for rel in TARGETS:
+    print("\n=== 内嵌版一致性（三份必须相同）===")
+    emb = {rel: digests[rel] for rel in EMBEDDED}
+    for rel in EMBEDDED:
         p = os.path.join(PROJECT, rel)
         print("  %-24s %8d 字节  %s"
               % (rel, os.path.getsize(p), digests[rel]))
+    for rel in LINKED:
+        p = os.path.join(PROJECT, rel)
+        print("  %-24s %8d 字节  %s  (外链版)"
+              % (rel, os.path.getsize(p), digests[rel]))
 
-    if len(uniq) == 1:
-        print("\n✓ 四份完全一致，MD5 = %s" % uniq.pop())
+    if len(set(emb.values())) == 1:
+        print("\n✓ 内嵌版三份一致，MD5 = %s" % emb[EMBEDDED[0]])
         return 0
 
-    print("\n✗ 存在 %d 种不同内容，请重新构建后重试" % len(uniq))
+    print("\n✗ 内嵌版存在 %d 种不同内容，请重新构建后重试" % len(set(emb.values())))
     print("  重新构建: python3 vocab-builder/build.py && python3 vocab-builder/sanitize.py")
     return 1
 

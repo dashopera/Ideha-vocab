@@ -10,9 +10,17 @@ Requires: Pillow (pip install Pillow)
 Project: 007_米米背单词
 Usage:   python3 build.py          (run from anywhere; paths resolve relative to this file)
 Outputs: <project>/背单词-学习卡片.html   (single file, images embedded, works offline)
-         <project>/index.html            (same file, ready for web publishing)
+         <project>/index.html            (same embedded file, for local use)
+         <project>/米米背单词-便携版.html  (same embedded file, deliverable copy)
+         <project>/site/index.html       (WEB BUILD: images as linked files, HTML ~37 KB)
+
+Why two flavours: 94% of the embedded file is base64 image data (580 KB of 617 KB).
+Over a slow link a single 617 KB file is painful, so the web build ships a tiny
+HTML plus individual JPGs that the browser fetches in parallel over HTTP/2 and
+caches. The embedded files stay single-file so they work offline and can be
+sent as an email/IM attachment.
 """
-import base64, glob, io, json, os, sys
+import base64, copy, glob, io, json, os, shutil, sys
 from PIL import Image
 
 # paths resolve from the script's own location, so the project folder can be moved anywhere
@@ -63,6 +71,7 @@ def main():
             os.makedirs(small_dir, exist_ok=True)
             open(os.path.join(small_dir, "%02d_%s.jpg" % (i, slug)), "wb").write(buf.getvalue())
             w["img"] = "data:image/jpeg;base64," + base64.b64encode(buf.getvalue()).decode()
+            w["_href"] = "images/%s/%02d_%s.jpg" % (uid, i, slug)   # path used by the web build
         units.append(u)
         print("  %-6s %2d words  %s" % (uid, len(u["words"]),
               ("missing images: " + ", ".join(missing)) if missing else "images ok"))
@@ -71,19 +80,42 @@ def main():
     ph = "/*__UNITDATA__*/ []"
     if ph not in tpl:
         sys.exit("template placeholder not found: " + ph)
-    html = tpl.replace(ph, json.dumps(units, ensure_ascii=False))
+    emb_units = copy.deepcopy(units)
+    for u in emb_units:
+        for w in u["words"]:
+            w.pop("_href", None)          # embedded build must not carry web paths
+    html = tpl.replace(ph, json.dumps(emb_units, ensure_ascii=False))
     open(OUT, "w", encoding="utf-8").write(html)
-    open(INDEX, "w", encoding="utf-8").write(html)  # copy at project root
-    os.makedirs(os.path.dirname(SITE), exist_ok=True)
-    open(SITE, "w", encoding="utf-8").write(html)                            # copy for publishing
-    open(POCKET, "w", encoding="utf-8").write(html)                          # deliverable copy
+    open(POCKET, "w", encoding="utf-8").write(html)  # deliverable copy
+    # (INDEX is written by the web build below — GitHub Pages serves the root index.html)
 
+    # ---- web build: same page, images referenced as files instead of base64 ----
+    # Emitted to BOTH the project root (GitHub Pages publishes from /) and site/.
+    web_img_total = 0
+    web_units = copy.deepcopy(units)
+    for u in web_units:
+        for w in u["words"]:
+            w["img"] = w.pop("_href", w.get("img", ""))
+    web_html = tpl.replace(ph, json.dumps(web_units, ensure_ascii=False))
+
+    for base in (PROJECT, os.path.dirname(SITE)):
+        os.makedirs(base, exist_ok=True)
+        for u in units:
+            src = os.path.join(IMG_DIR, u["id"], "small")
+            dst = os.path.join(base, "images", u["id"])
+            os.makedirs(dst, exist_ok=True)
+            for f in glob.glob(os.path.join(src, "*.jpg")):
+                shutil.copy2(f, dst)
+                web_img_total += os.path.getsize(f)
+        open(os.path.join(base, "index.html"), "w", encoding="utf-8").write(web_html)
+    web_img_total //= 2                   # counted once per output directory
     print("built -> %s  (%.2f MB, %d units, %d words)" % (
         OUT, os.path.getsize(OUT) / 1024 / 1024, len(units),
         sum(len(u["words"]) for u in units)))
-    print("         " + INDEX)
-    print("         " + SITE + "   <- publish this folder")
-    print("         " + POCKET)
+    print("         " + POCKET + "  (embedded, deliverable)")
+    print("         %s  (web build: %.0f KB html + %.0f KB jpg, images linked)"
+          % (INDEX, os.path.getsize(INDEX) / 1024, web_img_total / 1024))
+    print("         %s  (same web build, publish folder)" % SITE)
 
 
 if __name__ == "__main__":
