@@ -180,6 +180,23 @@ $PY vocab-builder/build.py       # 双版本输出
 $PY vocab-builder/sanitize.py     # 净化 + 自检
 git add -A &amp;&amp; git commit -m &quot;说明&quot; &amp;&amp; git push</code></pre>
 <p>推送后 Pages 约 1 分钟完成重建。</p>
+<hr>
+<h2>十一、补充：账号门禁与管理后台 v1.1（2026-09-09 19:00）</h2>
+<h3>11.1 需求与约束</h3>
+<p>杭哥要求增加「管理员功能」与「用户登录验证」。选定的三项管理员能力：在线增删改单词、查看学习进度统计、管理用户账号；用户规模 2–5 人（家人）。</p>
+<p><strong>架构约束</strong>：应用是纯静态站（GitHub Pages），零后端、零数据库。这意味着<strong>纯前端做不了真正的认证</strong> —— 密码写在 JS 里，F12 即可绕过。</p>
+<p>经确认，杭哥选择<strong>零后端本地门禁</strong>方案。由此产生两个必须由机制弥补的缺口：</p>
+<table><thead><tr><th>期望能力</th><th>零后端下的现实</th><th>弥补手段</th></tr></thead><tbody><tr><td>查看学习进度统计</td><td>只能看到<strong>本机</strong>数据</td><td>导出 / 导入 JSON 作为跨设备通道</td></tr><tr><td>在线增删改单词</td><td>改动只在本机生效</td><td>管理员导出 → 合并进仓库 → 重新构建</td></tr></tbody></table>
+<h3>11.2 实现要点</h3>
+<p>1. <strong>纯 JS SHA-256</strong>：便携版是 <code>file://</code> 打开，<code>crypto.subtle</code> 在非安全上下文不可用，因此自带实现（约 40 行）。已用 Node 标准库对比验证 9 个用例（空串、abc、中文、55/56/64/200 字节边界）<strong>全部一致</strong>。 2. <strong>加盐哈希</strong>：每账号独立随机 salt，存 <code>SHA-256(salt + '|' + 密码)</code>，不存明文。 3. <strong>进度按用户隔离</strong>：键由 <code>vocab_done_&lt;单元&gt;</code> 改为 <code>mmv_prog_&lt;用户&gt;__&lt;单元&gt;</code>，并写了迁移函数，老进度在首次登录时自动迁到用户名下，不丢失。 4. <strong>词表覆盖层剥离图片</strong>：localStorage 上限 5 MB，而图片 base64 有 580 KB。覆盖层只存文字，加载时按单词名从内置数据回填图片。 5. <strong>免登录恢复入口</strong>：忘记密码且无备份会永久锁死（无服务器可重置），故在门禁页加了「导入备份」，无需登录即可导入恢复。</p>
+<h3>11.3 验证</h3>
+<table><thead><tr><th>层次</th><th>方法</th><th>结果</th></tr></thead><tbody><tr><td>算法</td><td>Node 对比 crypto 标准库，9 个用例</td><td>9/9 一致</td></tr><tr><td>语法</td><td><code>node --check</code> 提取的成品 JS</td><td>通过</td></tr><tr><td>逻辑</td><td>最小 DOM 垫片 + vm 沙箱，17 项断言</td><td>17/17 通过</td></tr><tr><td>真实 DOM</td><td>jsdom 加载成品 HTML，完整交互链路 42 项</td><td><strong>42/42 通过</strong></td></tr></tbody></table>
+<p>jsdom 测试覆盖：首次创建管理员 → 登录 → 原有拼写流程未受影响 → 管理后台 → 新增成员账号 → 在线加词并验证在学习列表可见 → 进度隔离 → 登出 → 第二账号登录（无管理按钮）→ 错误密码被拒 → 还原内置词表。</p>
+<h3>11.4 过程中的两个错误</h3>
+<p>1. <strong>TDZ 报错</strong>：<code>$</code> 的定义在门禁模块之后，导致 <code>Cannot access '$' before initialization</code>。修复：把 <code>ui/order/idx/$/U/WS/cur</code> 等基础声明提前。 2. <strong>改名残留</strong>：把 <code>linkFirst</code> 改为 <code>linkImport</code> 后，<code>showGate()</code> 里仍引用旧 ID，产生 <code>null.style</code> 运行时错误（回归测试 8 项失败）。修复后 42/42 通过。</p>
+<blockquote>教训：<strong>改名必须全局搜一遍引用</strong>。这次靠 jsdom 回归测试兜住了，否则会带到线上。</blockquote>
+<h3>11.5 安全边界（务必知晓）</h3>
+<ul><li>这是<strong>门禁不是认证</strong>，可被浏览器控制台绕过，<strong>不要用它保护敏感信息</strong></li><li>密码哈希存 localStorage，可被离线暴力破解 → 别用重要密码</li><li>所有数据仅存本机，跨设备只能靠导出 / 导入</li><li>请定期导出备份，否则忘记密码将无法恢复</li></ul>
 <div style="margin-top:44px;padding-top:14px;border-top:1px solid #e2ddd2;
   font-size:12px;color:#a89f8c;text-align:center;">
   米米背单词 · 工作记录 · 2026-09-09 · 本页可直接打印或导出为 PDF
