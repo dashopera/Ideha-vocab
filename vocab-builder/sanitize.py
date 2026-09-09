@@ -81,7 +81,7 @@ def main():
               % (rel, os.path.getsize(p), digests[rel]))
 
     if len(set(emb.values())) == 1:
-        print("\n✓ 内嵌版三份一致，MD5 = %s" % emb[EMBEDDED[0]])
+        print("\n✓ 内嵌版两份一致，MD5 = %s" % emb[EMBEDDED[0]])
         return 0
 
     print("\n✗ 内嵌版存在 %d 种不同内容，请重新构建后重试" % len(set(emb.values())))
