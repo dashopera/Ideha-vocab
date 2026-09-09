@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html lang="zh-CN" data-page-node-id="zFZhlS8rCyG5XNbQl2DFVE"><head data-page-node-id="uD4qigAIX7XjmEFcovvRxk"><meta charset="UTF-8" data-page-node-id="uf0ev58CAjrZfZrlSziFHz">
-<meta name="viewport" content="width=device-width,initial-scale=1.0" data-page-node-id="GDJ7I28kEwRDFoOr94EzT2">
+<html lang="zh-CN"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
 <title>米米背单词 · 工作记录</title><style>
 :root{--ink:#2c2a26;--muted:#6b6558;--line:#e2ddd2;--green:#3d6b52;--cream:#faf7f0;--code:#f4f0e6;}
 *{box-sizing:border-box;}
@@ -33,38 +33,38 @@ a{color:var(--green);}
 }
 @media (max-width:600px){body{padding:24px 16px;} table{font-size:12px;}}
 </style></head>
-<body data-page-node-id="GQORx5C78pFSNFyWLKMNPz"><h1 data-page-node-id="xwWxD96DkgGmBUuZxCt5l8">米米背单词（007）· 完整工作记录</h1>
-<blockquote data-page-node-id="8993605DZMqNvxFmGb0RnS">记录日期：2026-09-09 项目路径：<code data-page-node-id="qvLMkY4xdoNz0FH1s07AEp">/Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词</code> 记录性质：上下文 + 技术知识 + 产出清单 + 验证数据 + 决策依据</blockquote>
-<hr data-page-node-id="1YtPmup9z92tweBWe3kSwA">
-<h2 data-page-node-id="HBTYpH6C2DArD4aikZpK0h">一、项目概览</h2>
-<p data-page-node-id="AOPlnyNUroqtfUMsOTFS0E"><strong data-page-node-id="RNtPGTl2kMnG19PBW57xsJ">是什么</strong>：给米米做的看图拼写背单词工具，单文件 HTML 应用。</p>
-<p data-page-node-id="AKIKr528S4Qy6LIK67yOtZ"><strong data-page-node-id="Je52iICrNu6SN6X8jIKFDt">核心学习闭环</strong>：</p>
-<pre data-page-node-id="4qQ5T49WCNOU2fy2dr3LK4"><code data-page-node-id="rvD0J0AxofbpI2X9MCeIme">只看插画（不给单词）→ 心里想词 → 点图片 → 按字母数出现下划线
+<body><h1>米米背单词（007）· 完整工作记录</h1>
+<blockquote>记录日期：2026-09-09 项目路径：<code>/Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词</code> 记录性质：上下文 + 技术知识 + 产出清单 + 验证数据 + 决策依据</blockquote>
+<hr>
+<h2>一、项目概览</h2>
+<p><strong>是什么</strong>：给米米做的看图拼写背单词工具，单文件 HTML 应用。</p>
+<p><strong>核心学习闭环</strong>：</p>
+<pre><code>只看插画（不给单词）→ 心里想词 → 点图片 → 按字母数出现下划线
 → 输入拼写 → 自动判定 → 拼对了才显示英文释义与例句</code></pre>
-<p data-page-node-id="wHAYyM54jfXBVl63Xyk2IP"><strong data-page-node-id="GN0lQ1Jw1xahgYWWGQ3En9">设计原则</strong>：</p>
-<ul data-page-node-id="ZZ50Bq08JcrDWBWLsO6uJb"><li data-page-node-id="lth9At8IhwbPuKASzc8K1P">纯英文环境 —— 释义、例句一律英文，界面不出现中文</li><li data-page-node-id="UJ1s5vkTmHQ4vRBaXBB0mJ">单文件交付 —— 插画 base64 内嵌，离线可用</li><li data-page-node-id="xpgOgjp1F37VXmmjFQAAiE">单一数据源 —— 一切从 <code data-page-node-id="aABq20Ez3tbS2kAftM7Sgc">vocab-builder/</code> 生成，成品可随时重建</li></ul>
-<p data-page-node-id="NuGPdrMembqcD0SrZxVOsR"><strong data-page-node-id="b1d5SFo2zFQBTGs2XEWvwB">当前规模</strong>：1 个单元（Text 1），15 个单词，15 张插画。</p>
-<hr data-page-node-id="jordThGADhPpTDdVTrTZwr">
-<h2 data-page-node-id="tCqiaN6fG8SeExBpAXphgO">二、今日工作全景（时间线）</h2>
-<table data-page-node-id="Zo2Ls2AmSjyqF6ikC4HPAG"><thead data-page-node-id="j6LcxSbHsD7LV4pgbViqai"><tr data-page-node-id="wBNIHGDkVRoATsiFToGTw8"><th data-page-node-id="lAt9McEHdfQlqNCht4drY9">时间</th><th data-page-node-id="njIB9ZFDGVJZ7qnfgoAh0D">事项</th><th data-page-node-id="2TPevtkNEfbSjB6FBR5VYv">结果</th></tr></thead><tbody data-page-node-id="JuDPvfbMAmEtlmGMxcMaMk"><tr data-page-node-id="4BMt1lDBxLrwNws5fjxDVh"><td data-page-node-id="YUBL1nLnTZdA6K0TdGKcc3">09:42</td><td data-page-node-id="nBROcxbsUssxFA8CZrw58n">接收 <code data-page-node-id="7goxYNo9lVCJhF4WD5xroh">007_米米背单词.zip</code>（22.5 MB），解压还原项目</td><td data-page-node-id="ZEnOrjhBukssoecGn8i5c1">成功，需处理 zip 中文名编码</td></tr><tr data-page-node-id="o0f7exiqGUWVhlG8Ghg46k"><td data-page-node-id="g5RsK8qGXzrP3iggp9AWCz">09:43</td><td data-page-node-id="IPFxHH2cKXnGYxmSjhoLCt">核对资产完整性</td><td data-page-node-id="GAT4iAyX81b1ioMEeff5W7">15 词 / 15 原图 / 15 缩略图，全部完整</td></tr><tr data-page-node-id="cApnVQ5H7DT1oDn9Lx3Z4w"><td data-page-node-id="jpXQ8gEkX9SqzefEycyn5x">09:45–09:54</td><td data-page-node-id="o69zFCjFNt7bgcoDd4mbnc">搭建 Python 隔离环境，安装 Pillow 12.3.0</td><td data-page-node-id="AxFN8D7d6ZAa8pSpEUwIZf">耗时约 7 分钟（网络慢）</td></tr><tr data-page-node-id="9YXoOHz6y9RcOOEapTPs1j"><td data-page-node-id="crFjo9feZS9Um0Mx2E3X18">09:54</td><td data-page-node-id="QQrlPqVXmU1DoG8D8F057x">首次运行 <code data-page-node-id="oRzBrel8GxlrzJbHFfPbg0">build.py</code></td><td data-page-node-id="EbCBu7vj0kfNJ8Edn06s4V">输出 <code data-page-node-id="qsnCkrEZccck7XBsdr7sfW">images ok</code>；重建产物与沙箱产物<strong data-page-node-id="aD6LQtAxHmX09OrarneY3H">字节级一致</strong></td></tr><tr data-page-node-id="CvwFIk1CsMFwuB18Jiw0w6"><td data-page-node-id="Xz6kt6GTIaBOYNWo8MuWcI">09:55</td><td data-page-node-id="TSlD50eZwQQLWpmZKGUis2">整理完整工作手册 <code data-page-node-id="7ofDiOOh76vfwhzJIwLVG0">工作内容.md</code></td><td data-page-node-id="2pSGDwRTMn0mmLfUgzIceF">12 章节</td></tr><tr data-page-node-id="UWhwgjhUTxc8MSpJINBH6S"><td data-page-node-id="irhblK8NZwFnP8DlE0tntH">09:59</td><td data-page-node-id="dHUOSKwIgcJ2PISHZCZbLk">首次发布在线应用</td><td data-page-node-id="QZSJ55MtYWUt621U9u4AG8">返回 <code data-page-node-id="lIefk45vDtoVW0HRdNJUsG">*.app.workbuddy.link</code></td></tr><tr data-page-node-id="Ft606EU1blMmewNWFBS9PQ"><td data-page-node-id="tbeRSKL80ywD5cXtm1cbUl">10:57</td><td data-page-node-id="n8rH4k22ZJJf0FvKd7SOsT">用户反馈链接打不开</td><td data-page-node-id="fBR3OaelZvZJko6R6n3iDq">实测 404「链接已失效」</td></tr><tr data-page-node-id="zxg3TwPvcojQueBFsTBDC3"><td data-page-node-id="qFSgyu0stMweq66ywykV4S">10:59</td><td data-page-node-id="N5WDo4qDlr3vu4wK0wdSay">重新发布</td><td data-page-node-id="5aSfDoi5XNxYUbwuZVMRAW">返回新地址 <code data-page-node-id="t1mBn0pkXcRTbXsBHAyutB">*.e2b.sh3.sandbox.cloudstudio.club</code>，当时 200</td></tr><tr data-page-node-id="js6t8El9FfUjmFGiEdGuqS"><td data-page-node-id="Zt3d4a2cXO7o7muRF4LigL">11:11</td><td data-page-node-id="STda2D8iyS4wSsEgMFNb7f">用户反馈仍打不开</td><td data-page-node-id="Be1p039Db3dBUnbiMbA98G">两个链接分别 403 / 502，<strong data-page-node-id="FfX09afyxjJ6DM6tbw1k8S">该渠道判定不可用</strong></td></tr><tr data-page-node-id="RvOGuk75CWcFdPbaAyAK6R"><td data-page-node-id="GErY6B2xgxFhFm0Cg2JlzD">11:15</td><td data-page-node-id="YSrefarE1DDSO224JHVq7K">排查环境：GitHub 不可达；Gitee/Netlify/Vercel/Surge 可达</td><td data-page-node-id="AvExSPujrUb1hEfaolMRt1">形成决策依据</td></tr><tr data-page-node-id="8TML5lxXn8UMmc4b13bEKP"><td data-page-node-id="CyzcwkvkGQV4AKjPrlbNf1">11:20</td><td data-page-node-id="7lMM894Z5w8P1XSQT1sFcJ">用户选定方案：腾讯云 COS + 便携版兜底</td><td data-page-node-id="SJ7fIhpFUQAaSNcID5Ymnt">—</td></tr><tr data-page-node-id="OpZBat1t2WZsmGVM7dlWXl"><td data-page-node-id="allxxtCZVC5Xlf5FeRC5sT">11:25</td><td data-page-node-id="YHzZZ7A2AAmSddBW51wyQd">生成便携版单文件</td><td data-page-node-id="WPwUWzs9xM4IEdsHWO35cW">616 KB，零外部依赖</td></tr><tr data-page-node-id="OfKrEZxrC060LgBZFEMPFf"><td data-page-node-id="xEMq8uyoi9bIfYHCR00a8K">11:30</td><td data-page-node-id="5phMRuHDBU6haAMss90vQS">编写 COS 部署脚本（遇 pip 沙箱限制，改纯标准库实现）</td><td data-page-node-id="1y4yVIswyUYfwDoBJdBXgm">签名链路验证通过</td></tr><tr data-page-node-id="sl9aR3VvhLoX6pQ0eVh0Uw"><td data-page-node-id="AQALWkEHeAVpO98eNqWNSE">12:40</td><td data-page-node-id="21mUamJcIpnoFohGx6ZfSu">重建纯净便携版（发现预览服务注入污染）</td><td data-page-node-id="dIm5OrRqGRIvkZd8wbMwbt">四份成品 MD5 完全一致</td></tr></tbody></table>
-<hr data-page-node-id="SLJpYprnnuM86pgaZBpG5w">
-<h2 data-page-node-id="e3WJkCvMHGsT3YP6U4c0e8">三、交付成果清单</h2>
-<h3 data-page-node-id="sgpOP3AxcqLqEtMsZMUAqM">3.1 成品文件（4 份，内容完全相同）</h3>
-<table data-page-node-id="7jlFcdGQx9weUzxZo1al7y"><thead data-page-node-id="aecQh6USS60hWxksMBPyCe"><tr data-page-node-id="E5S1xtkBkU1od45GR0CBPK"><th data-page-node-id="Leu1YD7CrShgy28wdFdHQG">文件</th><th data-page-node-id="3KowSDRQXZ9SGf7mWO2Qhy">用途</th><th data-page-node-id="OfSD1mk6CbA1A8H1SwXut6">MD5</th></tr></thead><tbody data-page-node-id="DRy8EifiGSjcspWs3PNBY9"><tr data-page-node-id="yxntszgrA773c8T83NUKmP"><td data-page-node-id="DPhCPEAEG9e6ZN8T4LAW2Q"><code data-page-node-id="FAZ67sPLvCwWGBrlPSbhiD">背单词-学习卡片.html</code></td><td data-page-node-id="P38rMLBpitWzG8sttO4V5K">主成品，双击即用</td><td data-page-node-id="6VB6QLCkDUD9yosrB8LBnH"><code data-page-node-id="Cva3wesVdorcdDkZXNUN7C">4fc7287c...d86496</code></td></tr><tr data-page-node-id="QoX2v3mTGBcRqEgFIflfGD"><td data-page-node-id="EYKHnHdrTYmH1M2mwXhVYH"><code data-page-node-id="EsJ15jOfsULnIr3YMnOrfZ">index.html</code></td><td data-page-node-id="qJFYwnmNGgOdPaLDpJwkPk">项目根副本</td><td data-page-node-id="zGn0foa6ZSz0YaxKCtRDzx">同上</td></tr><tr data-page-node-id="bIiJgL1gL5uFQHdiJ0uI5D"><td data-page-node-id="PYuUEC6CY2jrhxGGVNQV8o"><code data-page-node-id="syFtwYVFzcpqUz8JcxOPDb">site/index.html</code></td><td data-page-node-id="SUSxhAHqAvXz2WARu7MuN0">发布专用目录（仅此一个文件）</td><td data-page-node-id="7xpF6AZt5zu4T2PQZNSAHj">同上</td></tr><tr data-page-node-id="GJBTQeuyxDKHF4RtOQCbk1"><td data-page-node-id="0RXYpbIJ1e7vtFNVv2sejj"><code data-page-node-id="OxlAnrqGb6l5N65Bg5XvP4">米米背单词-便携版.html</code></td><td data-page-node-id="EmGIpbBt3jrxZq7H6ByZpe"><strong data-page-node-id="sgKX2njf2r5lICSaQGHouH">交付给使用者的版本</strong></td><td data-page-node-id="nNEHTOfBvnHnQ4DGH5BY90">同上</td></tr></tbody></table>
-<p data-page-node-id="cBf1v0uIbZIrq0qt9ZJtpx">四份 MD5 完全一致：<code data-page-node-id="MILswB5eWrPUQBkzK4XAuS">4fc7287c003a7badfdba1672bbd86496</code>，各 630,872 字节。</p>
-<h3 data-page-node-id="ZpiGlj5bGBSYNHDOioaiB8">3.2 源数据与工具</h3>
-<table data-page-node-id="Upn0ZF3hXMf7gBhHgRH0Bp"><thead data-page-node-id="oNkNTkxID4noDZa8wEPI96"><tr data-page-node-id="XfGFPfrMEyl4CcQ0UGG5R7"><th data-page-node-id="KhiKJPYBSnq1BjGkyahJPR">文件</th><th data-page-node-id="zfs4GDT6IHawiiu6ALKKg0">大小</th><th data-page-node-id="fgyHeSn5HU4X3TUCNFW0l8">说明</th></tr></thead><tbody data-page-node-id="ObAggFBufXDHpEQKzsoPip"><tr data-page-node-id="YRvZg1HxonkvTPqP9ozBXT"><td data-page-node-id="3AuXt3zmBpIfWpFgVWzMfY"><code data-page-node-id="4xgPa3oNIopGV1DzvoITtq">vocab-builder/units/Text1.json</code></td><td data-page-node-id="lyDPYZiWcauFNTj2E4jzMC">8 KB</td><td data-page-node-id="5AzYto5xP0C1pJ95qRyxJx">词表数据（唯一数据源）</td></tr><tr data-page-node-id="54oflC3vOXcj40n4kakQaI"><td data-page-node-id="sJdwySKbMaoeu0iHu8F4Ml"><code data-page-node-id="CpeMRdNjuvcRbNsC5ec1w8">vocab-builder/template.html</code></td><td data-page-node-id="YRPYvkwAj5FWN9aDZ4V86e">32 KB</td><td data-page-node-id="eb1xGd0hCAk9xO1CgdBVdn">HTML 模板，含 <code data-page-node-id="juX8fGxkQw3jNCtmw9z423">/*__UNITDATA__*/</code> 占位符</td></tr><tr data-page-node-id="i0ZLA4XDI5cE6h8KPuLWZe"><td data-page-node-id="beBGo73bz2DxFck59ExH7E"><code data-page-node-id="xoCrS95yy8nrT5szR3HrzC">vocab-builder/build.py</code></td><td data-page-node-id="AFkSw9Le69VFxTanLdrcCu">4 KB</td><td data-page-node-id="AkOgKN3iJQ24ufsBk32B5c">构建脚本，路径自解析</td></tr><tr data-page-node-id="29YZpMWkCqv2Q8Pvg7Ucyh"><td data-page-node-id="dOQpvWbH0y23UGlebI8ZtS"><code data-page-node-id="9jIEomp004tTWgTi2me0xh">vocab-builder/deploy_cos.py</code></td><td data-page-node-id="5rqq1FxZT1AKtvaOq9pC6B">8 KB</td><td data-page-node-id="Ci2SLXFw4eB7sra40uCWXe">腾讯云 COS 部署脚本（纯标准库）</td></tr><tr data-page-node-id="oMuj3CmRdxyTl3rhbIqqAu"><td data-page-node-id="wqLcozQibP77PLtFTpPaJl"><code data-page-node-id="hJ6FIyGefdzMmOuA1oDAWX">vocab-builder/工作内容.md</code></td><td data-page-node-id="TPiSAS9msEOIFNaxJjprFl">12 KB</td><td data-page-node-id="YpMYErT7KRCryi9nQMsuwt">持续维护的工作手册</td></tr><tr data-page-node-id="kCCz20dCTv6AjtcNSmwr6s"><td data-page-node-id="kMgPyDvmqPHilGwHB99jHv"><code data-page-node-id="Ch5Jv191oJAx919FJ1F4fq">vocab-builder/images/Text1/</code></td><td data-page-node-id="qY6I9FXRcoN2cZMxCtCoyo">21 MB</td><td data-page-node-id="yOjNKRnpHHHz6GFEPNjCeD">15 张 PNG 原图 + 15 张 small JPG</td></tr></tbody></table>
-<h3 data-page-node-id="OmIWtf6qMD7b5qNbk9Btdc">3.3 便携版自包含性验证（实测）</h3>
-<pre data-page-node-id="HuIHyXg0K6Pr4AtBUTV3jF"><code data-page-node-id="5mbhuVGBtrHFYk5WnP5K7J">字节数        : 630,872
+<p><strong>设计原则</strong>：</p>
+<ul><li>纯英文环境 —— 释义、例句一律英文，界面不出现中文</li><li>单文件交付 —— 插画 base64 内嵌，离线可用</li><li>单一数据源 —— 一切从 <code>vocab-builder/</code> 生成，成品可随时重建</li></ul>
+<p><strong>当前规模</strong>：1 个单元（Text 1），15 个单词，15 张插画。</p>
+<hr>
+<h2>二、今日工作全景（时间线）</h2>
+<table><thead><tr><th>时间</th><th>事项</th><th>结果</th></tr></thead><tbody><tr><td>09:42</td><td>接收 <code>007_米米背单词.zip</code>（22.5 MB），解压还原项目</td><td>成功，需处理 zip 中文名编码</td></tr><tr><td>09:43</td><td>核对资产完整性</td><td>15 词 / 15 原图 / 15 缩略图，全部完整</td></tr><tr><td>09:45–09:54</td><td>搭建 Python 隔离环境，安装 Pillow 12.3.0</td><td>耗时约 7 分钟（网络慢）</td></tr><tr><td>09:54</td><td>首次运行 <code>build.py</code></td><td>输出 <code>images ok</code>；重建产物与沙箱产物<strong>字节级一致</strong></td></tr><tr><td>09:55</td><td>整理完整工作手册 <code>工作内容.md</code></td><td>12 章节</td></tr><tr><td>09:59</td><td>首次发布在线应用</td><td>返回 <code>*.app.workbuddy.link</code></td></tr><tr><td>10:57</td><td>用户反馈链接打不开</td><td>实测 404「链接已失效」</td></tr><tr><td>10:59</td><td>重新发布</td><td>返回新地址 <code>*.e2b.sh3.sandbox.cloudstudio.club</code>，当时 200</td></tr><tr><td>11:11</td><td>用户反馈仍打不开</td><td>两个链接分别 403 / 502，<strong>该渠道判定不可用</strong></td></tr><tr><td>11:15</td><td>排查环境：GitHub 不可达；Gitee/Netlify/Vercel/Surge 可达</td><td>形成决策依据</td></tr><tr><td>11:20</td><td>用户选定方案：腾讯云 COS + 便携版兜底</td><td>—</td></tr><tr><td>11:25</td><td>生成便携版单文件</td><td>616 KB，零外部依赖</td></tr><tr><td>11:30</td><td>编写 COS 部署脚本（遇 pip 沙箱限制，改纯标准库实现）</td><td>签名链路验证通过</td></tr><tr><td>12:40</td><td>重建纯净便携版（发现预览服务注入污染）</td><td>四份成品 MD5 完全一致</td></tr></tbody></table>
+<hr>
+<h2>三、交付成果清单</h2>
+<h3>3.1 成品文件（4 份，内容完全相同）</h3>
+<table><thead><tr><th>文件</th><th>用途</th><th>MD5</th></tr></thead><tbody><tr><td><code>背单词-学习卡片.html</code></td><td>主成品，双击即用</td><td><code>4fc7287c...d86496</code></td></tr><tr><td><code>index.html</code></td><td>项目根副本</td><td>同上</td></tr><tr><td><code>site/index.html</code></td><td>发布专用目录（仅此一个文件）</td><td>同上</td></tr><tr><td><code>米米背单词-便携版.html</code></td><td><strong>交付给使用者的版本</strong></td><td>同上</td></tr></tbody></table>
+<p>四份 MD5 完全一致：<code>4fc7287c003a7badfdba1672bbd86496</code>，各 630,872 字节。</p>
+<h3>3.2 源数据与工具</h3>
+<table><thead><tr><th>文件</th><th>大小</th><th>说明</th></tr></thead><tbody><tr><td><code>vocab-builder/units/Text1.json</code></td><td>8 KB</td><td>词表数据（唯一数据源）</td></tr><tr><td><code>vocab-builder/template.html</code></td><td>32 KB</td><td>HTML 模板，含 <code>/*__UNITDATA__*/</code> 占位符</td></tr><tr><td><code>vocab-builder/build.py</code></td><td>4 KB</td><td>构建脚本，路径自解析</td></tr><tr><td><code>vocab-builder/deploy_cos.py</code></td><td>8 KB</td><td>腾讯云 COS 部署脚本（纯标准库）</td></tr><tr><td><code>vocab-builder/工作内容.md</code></td><td>12 KB</td><td>持续维护的工作手册</td></tr><tr><td><code>vocab-builder/images/Text1/</code></td><td>21 MB</td><td>15 张 PNG 原图 + 15 张 small JPG</td></tr></tbody></table>
+<h3>3.3 便携版自包含性验证（实测）</h3>
+<pre><code>字节数        : 630,872
 内嵌图片      : 15 张
 外部 JS/CSS   : 0 个
 注入残留      : 0 处
 唯一外部 URL  : dict.youdao.com（在线真人发音，可选）</code></pre>
-<p data-page-node-id="4yuFuRQ7RBkFUnrGDwUN3t"><strong data-page-node-id="mlm0uGdB33P1vq6wTi9BjF">结论</strong>：断网可用。在线发音取不到时自动回退本地语音，不影响任何功能。</p>
-<hr data-page-node-id="PYXEEGHlLDOEWsYOszLDiN">
-<h2 data-page-node-id="Kaxb4NF86e7wWSFHXLCS4S">四、技术架构</h2>
-<h3 data-page-node-id="aFJwKzVKKu51cBXNCj4DFG">4.1 目录结构</h3>
-<pre data-page-node-id="PFrJA1nWXXquW16E86NmFf"><code data-page-node-id="FAjOmEOBAaz9LCBNdsCSGd">007_米米背单词/
+<p><strong>结论</strong>：断网可用。在线发音取不到时自动回退本地语音，不影响任何功能。</p>
+<hr>
+<h2>四、技术架构</h2>
+<h3>4.1 目录结构</h3>
+<pre><code>007_米米背单词/
 ├── 米米背单词-便携版.html      ← 交付版（发微信/拷手机）
 ├── 背单词-学习卡片.html        ← 主成品
 ├── index.html                 ← 根副本
@@ -77,13 +77,13 @@ a{color:var(--green);}
     ├── build.py
     ├── deploy_cos.py
     └── 工作内容.md</code></pre>
-<h3 data-page-node-id="ubxBsnRAhBRrGAHqHjBBJ8">4.2 构建流程</h3>
-<pre data-page-node-id="ct9Vauk8rY7WP9m6oMLxHh"><code data-page-node-id="1ZeapNAA7uybuCWgZL8mQr">cd /Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词
+<h3>4.2 构建流程</h3>
+<pre><code>cd /Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词
 /Users/H.Sheng/.workbuddy/binaries/python/envs/default/bin/python vocab-builder/build.py</code></pre>
-<p data-page-node-id="H7pc1GTQ8pGQ4sCE2GKg35">必须使用上述 venv 路径 —— 本机其他 Python 均未安装 Pillow。</p>
-<p data-page-node-id="6RKVJ3q8kAnf7wYYoGSXcq">构建脚本行为： 1. 按自然序读取 <code data-page-node-id="V1dMFGOTgo8tuhZ9PI4qpK">units/TextN.json</code>（保证 Text2 &lt; Text10） 2. 按 <code data-page-node-id="cvVgt97qM6CKIYMmmR5BpI">NN_slug.png</code> 匹配图片 → 转 RGB → 缩放 720×480 → JPEG q70 3. 压缩图写入 <code data-page-node-id="200AxMc70vlvfUM30CK8gV">images/&lt;Unit&gt;/small/</code> 4. 图片转 base64 内联，替换模板占位符 5. 同时输出三份：成品 HTML、根 <code data-page-node-id="Flo4gNgGfJxlDEcFWgZZcK">index.html</code>、<code data-page-node-id="Ih7YhE6ZhAsxnGeyhTCfSt">site/index.html</code></p>
-<h3 data-page-node-id="sI5L6WLTBrrRRKm6uEKedX">4.3 数据规范</h3>
-<pre data-page-node-id="TSMQDDYInmhTHBzL6ylnx7"><code data-page-node-id="HzvdCFrJDYRCVsNwK64Cy5">{
+<p>必须使用上述 venv 路径 —— 本机其他 Python 均未安装 Pillow。</p>
+<p>构建脚本行为： 1. 按自然序读取 <code>units/TextN.json</code>（保证 Text2 &lt; Text10） 2. 按 <code>NN_slug.png</code> 匹配图片 → 转 RGB → 缩放 720×480 → JPEG q70 3. 压缩图写入 <code>images/&lt;Unit&gt;/small/</code> 4. 图片转 base64 内联，替换模板占位符 5. 同时输出三份：成品 HTML、根 <code>index.html</code>、<code>site/index.html</code></p>
+<h3>4.3 数据规范</h3>
+<pre><code>{
   &quot;id&quot;: &quot;Text1&quot;,
   &quot;title&quot;: &quot;Text 1&quot;,
   &quot;note&quot;: &quot;来源说明&quot;,
@@ -97,66 +97,91 @@ a{color:var(--green);}
     &quot;prompt&quot;: &quot;...&quot;          // 画图描述，便于重画
   }]
 }</code></pre>
-<p data-page-node-id="YJW54H4DmH64wDKcJnlB1B"><strong data-page-node-id="Q00cwUhB6ooQh0i5AHhM1g">约束</strong>：</p>
-<ul data-page-node-id="aNrUeJpZ5iS3LmqJVbAgSD"><li data-page-node-id="yiCCnqn6GXkVUiTeYuZg1W"><code data-page-node-id="GntyDqWKhEGqshAUPD8mc4">id</code> 必须与图片目录名一致（<code data-page-node-id="6wQBjHyu348EtLZFlgWO9x">Text1</code> ↔ <code data-page-node-id="uAS6OCFajEhjRH7BGFa2lW">images/Text1/</code>）</li><li data-page-node-id="ohEOgXdmdimaUMjXE5uuq1">图片命名 <code data-page-node-id="suxWRWK1GMXPC8JfEPmLWU">NN_slug.png</code>，slug = 单词小写且 <code data-page-node-id="Thd155BXWoj3AEK7rFzEs9">-</code>/空格/<code data-page-node-id="kNuzNV867MccsVTuIkz0Wn">/</code> 替换为 <code data-page-node-id="nKSu7MlqXujzzR0BHahtPA">_</code></li><li data-page-node-id="ng8ZjwUXUmDIf9dkJcjBQz">例：<code data-page-node-id="F9EtQfVQy3SSASNfVZqTFK">self-esteem</code> → <code data-page-node-id="RIL0gwfoBewpTE0uT4FM5H">14_self_esteem.png</code></li></ul>
-<h3 data-page-node-id="IzqeSBLvLDl7Veht4bZrDt">4.4 当前词表（Text 1，15 词）</h3>
-<table data-page-node-id="y8P8n6DzZHI8j7jCcYYNy2"><thead data-page-node-id="aj2ZTZydNxAyKLl1oH6xQ4"><tr data-page-node-id="kGpCiN1sGKNoqOv2EkKwxI"><th data-page-node-id="PJxtAxJagxctBGbj6FopCI">#</th><th data-page-node-id="bsxJgZ9CDwD5XMX0a3ivXi">单词</th><th data-page-node-id="pNGcysxnb6XB1NwcQ3ZiaI">词性</th><th data-page-node-id="ooczWnpI2FSdd04ywgiKfs">音标</th></tr></thead><tbody data-page-node-id="ex18eYpJG2nOHjApEGze6G"><tr data-page-node-id="TI099hIwAQ3ldbUa2IFPsL"><td data-page-node-id="K3EfLzZMvE4zIXbLoHurOe">1</td><td data-page-node-id="dFzuEj2zkfG8kXfUsorRip">accountable</td><td data-page-node-id="8VKAHF16Z8AyBAHDVI9M5j">adjective</td><td data-page-node-id="pOMOjOwP1IfuhkbFRAUuaA">/əˈkaʊntəbl/</td></tr><tr data-page-node-id="9DlTzIXhGc3hKTQbN6HdLz"><td data-page-node-id="647787LmK2fvGvX7FGnzCj">2</td><td data-page-node-id="bTnHLCFmF4wDmI3IEH1kOz">advise</td><td data-page-node-id="RoFfO6iajQOsBBPjzBekbo">verb</td><td data-page-node-id="bGPOTZxSwDgmdTb0Zq929U">/ədˈvaɪz/</td></tr><tr data-page-node-id="h3EmW6z3ytGZ0DcwfdFVAV"><td data-page-node-id="u77fI6SKpzsFKCnDMyhJYN">3</td><td data-page-node-id="qBKF7XZjINXGBj8QL4NRqf">consider</td><td data-page-node-id="069LZej7Z6YBj1TDs9e78w">verb</td><td data-page-node-id="uPsUTaH0sKXybFNZXHyblk">/kənˈsɪdə(r)/</td></tr><tr data-page-node-id="0YPdDtUKXb5QxbjOr7yfFL"><td data-page-node-id="aOo2t7DvV0LwqO8EcZSw9Q">4</td><td data-page-node-id="rouiBMydIQFCJUdWSHA00X">costume</td><td data-page-node-id="UFFVc4odR4DTTjUB7L0dok">noun</td><td data-page-node-id="tnfLDQHFPTnpr57juqiR8i">/ˈkɒstjuːm/</td></tr><tr data-page-node-id="NHWN7LD8DBpvQRdV6JfBWr"><td data-page-node-id="QXdYXNAT0rjFGBSX9rMNRU">5</td><td data-page-node-id="DYyqhNlks96KZyjxzc7RQh">desperately</td><td data-page-node-id="HXEZ6aMKeM2hB2nUeYvPDO">adverb</td><td data-page-node-id="uREvZ2TzV0LbsUXa3f9ezw">/ˈdespərətli/</td></tr><tr data-page-node-id="q0yilIl5iiLWF5JHKVmhBN"><td data-page-node-id="GN45JYdnyX5Zf7OKvNw5ae">6</td><td data-page-node-id="2AOBJThroNibAA2hATUkyW">hesitate</td><td data-page-node-id="ogiRoS7R9Jalj8f4ZdQ7k9">verb</td><td data-page-node-id="prIEP89VgLu785d1WHeGl3">/ˈhezɪteɪt/</td></tr><tr data-page-node-id="cxvobZunjCd9LZMJxOsCFv"><td data-page-node-id="7iR4zYiPNbbjE7wdthCTQW">7</td><td data-page-node-id="wyfcFQwyqfl55At3TD6Lhf">humiliate</td><td data-page-node-id="GqM0LdXyAqeoMs1a7j7xc7">verb</td><td data-page-node-id="cH4OA8BadS2FHnPOfGnduC">/hjuːˈmɪlieɪt/</td></tr><tr data-page-node-id="MQFvlCLYT75wnA1PE85dRM"><td data-page-node-id="cXpJmTCJuDtmdpuW3iqHmI">8</td><td data-page-node-id="EDgv9s8q7auMuEwGZweiEr">individual</td><td data-page-node-id="TVnt0AQGmhoxRAYjklSpmF">noun</td><td data-page-node-id="JI4de0h8QR9rEdulLc81Wp">/ˌɪndɪˈvɪdʒuəl/</td></tr><tr data-page-node-id="XHjTND62n5dj4kxdNAojBN"><td data-page-node-id="6SPTOn7q4Arz7it3SzHQ1w">9</td><td data-page-node-id="s2o6eVGPPEljmLKDVzhP0i">inspiration</td><td data-page-node-id="h7S5BkTLGeUxn3sXqB0928">noun</td><td data-page-node-id="OksHaWDuu4bUF3BzjYWCxh">/ˌɪnspəˈreɪʃn/</td></tr><tr data-page-node-id="zDIz48NI2i8eZ7t88DVBx6"><td data-page-node-id="s8MQVJei9ugElT06qaWK2s">10</td><td data-page-node-id="LJT5nMTgOyUB8IZfQG8WzK">interrupt</td><td data-page-node-id="rqk5JDva1bCqQGSd3o7y4f">verb</td><td data-page-node-id="IH5H2Z7muKMbbhQcFvIf26">/ˌɪntəˈrʌpt/</td></tr><tr data-page-node-id="iloV6Ybe2dWXDQmRBY0uaW"><td data-page-node-id="Jsagon8RoDnJiOor6GGxUf">11</td><td data-page-node-id="222f09Gem6iup8eLGso6PB">juggle</td><td data-page-node-id="2sXexJZONQtw1Oe3dRz1xk">verb</td><td data-page-node-id="Zd2QdCtOBnrodTUSuWhW1f">/ˈdʒʌɡl/</td></tr><tr data-page-node-id="pmmUxixpl0076gl31A67FN"><td data-page-node-id="1n4hf5MLead9FtG328vUZL">12</td><td data-page-node-id="ewyFiAThL1J9hVnOXtAWJ5">resentful</td><td data-page-node-id="ci2eyKVGWTKFWpmXKNxJc7">adjective</td><td data-page-node-id="T7HlYbLzxdwW7GbNAF3knG">/rɪˈzentfl/</td></tr><tr data-page-node-id="OD4uzYRxrvr2aIQKWgfbpf"><td data-page-node-id="77382HGQMoD7kNX6hckJuD">13</td><td data-page-node-id="UDu3ryJnTr3eeuk7IjFG34">routine</td><td data-page-node-id="OqlzjFYqfANWOD7Sfa3hcS">noun</td><td data-page-node-id="v0JAqRnw16O7x81YyDSWur">/ruːˈtiːn/</td></tr><tr data-page-node-id="PB2yAanf5u5NMrrQdmTXxC"><td data-page-node-id="H1ySQzQb6XeGMnwORgORlv">14</td><td data-page-node-id="Og8OW6pEy4Q6Xz6o90huI5">self-esteem</td><td data-page-node-id="748kfrVtlCHfWRUCvDcRvo">noun</td><td data-page-node-id="QoGlbdng3JocJRBkBpgGqx">/ˌself ɪˈstiːm/</td></tr><tr data-page-node-id="IgMcYGGKCYNdjHbRnzCjen"><td data-page-node-id="Tsu9gJl7rvvJXn9Apwx4H7">15</td><td data-page-node-id="U7AudS2IKbirdGdF6nimv9">uncomfortably</td><td data-page-node-id="5JyEosNCHWdAtzKoEWz7Bp">adverb</td><td data-page-node-id="9tZ3EEDTNVsXtRnCe7CtLH">/ʌnˈkʌmftəbli/</td></tr></tbody></table>
-<hr data-page-node-id="tJi47kl0PjKzDEIE457D6p">
-<h2 data-page-node-id="gyXxD3OH2rrNuJTLmPeJYi">五、产品功能</h2>
-<p data-page-node-id="AM2oRh1L1vlMdz2W9or3Sp"><strong data-page-node-id="ICUOUkf8tssMxtJCusWBc6">1. Cards —— 主学习闭环</strong></p>
-<ul data-page-node-id="Lg4V5dXm1OH8WPloGFtxC8"><li data-page-node-id="1RIzBreBBS9pFinSQrn6CZ">仅显示插画；点图后缩小并出现下划线格子（数量 = 字母数；连字符单独显示且不计入输入）</li><li data-page-node-id="O8VUCXmNDhjo6ST4AL5N3z">边打边填格，输满自动判定；回车可提前判定</li><li data-page-node-id="pixAzZcXIxKgYEEOrzmTlQ">拼对 → 绿色 ✓ → 0.7 秒后进入结果页并自动朗读</li><li data-page-node-id="3NpYxP4JKFk7H1vSW2OTQu">拼错 → 红色抖动 → 显示正确拼写 → 2.2 秒后清空重拼</li><li data-page-node-id="2RIjJozXeMgHAMIHVkespB"><code data-page-node-id="FLMCkKh8ZhGgvAlJWJhIWm">Reveal answer</code> 直接看答案（标红）</li><li data-page-node-id="RVrcUel5SQQ0NuMRg8tGh3">结果页：词性、单词、音标、英文释义、用法提示、例句，单词与例句各有独立朗读按钮</li><li data-page-node-id="MCKMAEkpPWDILaKyTgx8L9">导航：Prev / Shuffle / Next；全部掌握后显示完成页</li></ul>
-<p data-page-node-id="rIZXACDHYewCzecFoT1lqA"><strong data-page-node-id="8LZIm7MJRCd0gmxVNnTeB3">2. Quiz —— 反向测验</strong></p>
-<ul data-page-node-id="iAr7QgdrkBvBpSjBRPlzqL"><li data-page-node-id="R2EBQDqIpYJfanF5o9bfIl">给英文释义四选一，<strong data-page-node-id="KIni7S5FYHCMl6CGg8wZ8a">无图</strong></li><li data-page-node-id="zDCoco6pvfUo96CywBbL9t">实时计分；答错停留更久（2.8s vs 1.5s）并朗读</li><li data-page-node-id="tbpcXf83RnKMKb5YEHj8Bv">结束按正确率反馈（≥90 🏆 / ≥70 👏 / 其余 💪），列出全部错词及释义</li></ul>
-<p data-page-node-id="AHPaSqtX1PrCCTR4rwg5sl"><strong data-page-node-id="B4JPkjTVkmrE9xgeleDLWM">3. List —— 词表</strong></p>
-<ul data-page-node-id="NUC1lX7LeVXnAOgCqfPUx9"><li data-page-node-id="KsOG3wsHO7IDthUmCVlhgs">一屏看完全部单词：缩略图 + 单词 + 音标 + 释义，点任意一行朗读</li></ul>
-<p data-page-node-id="6dEWLuJj6xGhYZmoHdOeIP"><strong data-page-node-id="ko0aygQFhSWtjnDS58y10K">4. 发音设置</strong></p>
-<ul data-page-node-id="H3msmyZNQ1hJqNcKiYhnO9"><li data-page-node-id="xNFXZVDOkwBsnIri21RziM">自动优选女声（按 natural/neural/online/samantha/karen 等关键词打分）</li><li data-page-node-id="fBYIBF65XcAwQuh3jQ8wli">可调 voice / rate（默认 0.88）/ pitch（默认 1.08）</li><li data-page-node-id="lDgYbdRyuRYkdaXPVMmFVp">音源三档：Auto / Device only / Online human voice（有道 TTS，需联网）</li></ul>
-<p data-page-node-id="c1cZoIZ3oRxAdagPD1iyUO"><strong data-page-node-id="eh9hxAOFpAQiYoIgaREBgG">进度存储</strong>：按单元独立存 localStorage（key = <code data-page-node-id="HBVW0UIiLjYqvjDL6tgxCw">vocab_done_&lt;UnitId&gt;</code>），换单元不丢，<strong data-page-node-id="f0RKv3CAZqRq1dPlE5LkCJ">设备间不互通</strong>。</p>
-<hr data-page-node-id="4p8A7EUdwRgcLhPJHSTaA8">
-<h2 data-page-node-id="4VQuBr2DHE9Q7AfjmmFKvb">六、知识库</h2>
-<h3 data-page-node-id="sDrOC6eP4zQBhEabpsPIi6">6.1 环境事实（实测）</h3>
-<table data-page-node-id="ntJ4Flw9u6urigWO7nQTmF"><thead data-page-node-id="45rb6LDrl1uv8cWdUMN5vN"><tr data-page-node-id="K9Tl4iDhp4iVGtO2LCWv7I"><th data-page-node-id="VeuX2yQ9KY35Cb7NR6RF8Q">项</th><th data-page-node-id="KlmSd8fugS3NEBuMspIBQN">状态</th></tr></thead><tbody data-page-node-id="T5mp9mEMgaxBr504hNs4r4"><tr data-page-node-id="CZGuhsEioZBMTDvTES8F25"><td data-page-node-id="q6AMCVmrjo7Ok6NlpogQB8">Python 隔离环境</td><td data-page-node-id="OEY5TbwbPqVdDcMoOe7jKR"><code data-page-node-id="ukaWhRfm8ewr6LJfDQZ4VS">/Users/H.Sheng/.workbuddy/binaries/python/envs/default</code>（Pillow 12.3.0）</td></tr><tr data-page-node-id="9dFcFn9AMWvefLNFPUWPHY"><td data-page-node-id="1WLUf3S8fBxITzxwAGwnTM">github.com</td><td data-page-node-id="nFCCGIEIFRlP4zKWBwFk5m"><strong data-page-node-id="p9zzjBRqoZC1uj5QNfJxRE">不可达</strong>（HTTPS 超时，且无 SSH 密钥）</td></tr><tr data-page-node-id="iHCOmxjkFlxA2LbiDUEPrp"><td data-page-node-id="SfeeIoCZDylKZBBZt8v9qB">gitee.com / netlify.com / vercel.com / surge.sh</td><td data-page-node-id="zElUxMkJR5aZYlwdTKOUnU">可达</td></tr><tr data-page-node-id="hEtF1P7TplB3QekKrWuDJe"><td data-page-node-id="gYOpvFaXBQaQjw6SAJwruu">cloud.tencent.com / cos.ap-shanghai.myqcloud.com</td><td data-page-node-id="72AVin8v30cBvZBE4y3ZBc">可达</td></tr><tr data-page-node-id="3qUyacCvekUYocH6Q3VeeG"><td data-page-node-id="lWcrpOcDhMpLuX1meI4Bsf">沙箱内 pip 安装</td><td data-page-node-id="YtEvUdiqAV8UQhyICYIT7f"><strong data-page-node-id="5JYQAeuC2rGdPBqD20DNZj">受限</strong> —— mkdir 被策略拦截（EEXIST，改 TMPDIR 无效）</td></tr></tbody></table>
-<h3 data-page-node-id="XGEQXZ0uBeBd72kqt7xtw7">6.2 已踩过的坑</h3>
-<p data-page-node-id="a2tIMFD2wNpRO49bfkWJHq">1. <strong data-page-node-id="We0DXMFc5FBXTqU8AZHTJ7">zip 中文文件名编码</strong> —— 包内中文名为 cp437 编码，需用 <code data-page-node-id="YGtbFmfD1vJbBRlbHHMYwz">filename.encode('cp437').decode('utf-8')</code> 还原，直接 <code data-page-node-id="9r4k2A2JGkHjmoNRQnP7Bo">unzip</code> 会乱码。 2. <strong data-page-node-id="FvWIZ9qS0bUwPjyqXHVeEX">图片生成不能并行</strong> —— 并行会写同名文件互相覆盖（曾 5 张只剩 2 张，白花积分）。必须一次一张，拿到立刻改名。 3. <strong data-page-node-id="P85YJjBa7TNNbCrFlr3Nbk">图片生成 <code data-page-node-id="D50FjslCCXUCm1gpxYvfJa">output_dir</code> 参数无效</strong> —— 图落默认目录，改名步骤不能省。 4. <strong data-page-node-id="nwBHNSYQFUhXtWpPGMSf1I">原图 PNG 不能丢</strong> —— 成品被覆盖后没有原图就重建不出来。 5. <strong data-page-node-id="G3FR1vd2fECYzu6B7cpHZs">WorkBuddy 内置发布不可靠</strong> —— 见 6.3。 6. <strong data-page-node-id="XsepQhDAkfNY1r2zladGc8">预览服务会污染 HTML</strong> —— 预览便携版时被注入 4 KB 的 <code data-page-node-id="NFEscygxjlqVjxPQCVvtFd">data-page-node-id</code> 属性。交付前必须校验 MD5。 7. <strong data-page-node-id="XQMwH79Wawz66O4O2d0of2">pip 在沙箱内装不上包</strong> —— 改用标准库实现（COS 签名脚本即如此）。</p>
-<h3 data-page-node-id="2Ssi7Bfvr2aUUxIvSJc5ie">6.3 决策记录：为什么放弃内置发布</h3>
-<table data-page-node-id="ju08bzQG755kaMHCxyzEtS"><thead data-page-node-id="4sE6k1rml4joqdeEnwTyTy"><tr data-page-node-id="4oVQaXtHloznu4BxxoWlrL"><th data-page-node-id="2RrBVF307xl8QPCEZa15d5">时间</th><th data-page-node-id="DYyUXioJXye1ZFApnvD1sm">链接</th><th data-page-node-id="rG9S7NtkCzOPWJvBmXBylC">实测结果</th></tr></thead><tbody data-page-node-id="G7opYlFzJ0PxVzZjCaggBt"><tr data-page-node-id="FtYLHuHXkaKTzd5KKjdQ3k"><td data-page-node-id="MyK12fBr0sJh4d34IxNTYH">09:59</td><td data-page-node-id="jjVPcXvpdQJ6BGOyE6BJQ4"><code data-page-node-id="3wDFNrnO9FUs6GzA1N9WaI">*.app.workbuddy.link</code></td><td data-page-node-id="ACOEc3e3ZoFC9P3vsQC3HK">200（当时正常）</td></tr><tr data-page-node-id="kBRMpzfhbtNQtJFXOAsyau"><td data-page-node-id="Y3h8LUGQ2ucQCQR4qmn9kJ">10:57</td><td data-page-node-id="RlqfEzzPAIlGmJ0mW1tjRn">同上</td><td data-page-node-id="JyR5cYvAennDhYXoo5AM6J"><strong data-page-node-id="Y57jqlHJoMBkHJKRHsSLdP">404「链接已失效」</strong></td></tr><tr data-page-node-id="4A4wUWTiGjPQhHExNrlUXi"><td data-page-node-id="RgL3JM1w8KFdF8vt6SCWX7">10:59</td><td data-page-node-id="uzrs0F0DFJ83IF1IhfGaVB"><code data-page-node-id="xP79o4BLUyCbxeaUd6lE51">*.e2b.sh3.sandbox.cloudstudio.club</code></td><td data-page-node-id="RTMyLGR4QjxDiAEnOyTqAd">200（当时正常）</td></tr><tr data-page-node-id="zYiT5pQtBlZokjFhOeMWeq"><td data-page-node-id="YjnGyf45euMaw6Znvc8gF9">11:11</td><td data-page-node-id="WVpNE79s08fk29S80BDUt7">同上</td><td data-page-node-id="q0sshqkBsn5x7GkCATlXKZ"><strong data-page-node-id="57BBPCaGlnvjn4UGbOqAIi">403</strong>；旧链接 <strong data-page-node-id="Oi3BE8Jnp1aCf4LkNmFspe">502</strong></td></tr></tbody></table>
-<p data-page-node-id="TspYiKeWvCXr8O8E9HvwF4"><strong data-page-node-id="t5kRqYxjKJYZtFpkFMCLEf">结论</strong>：该渠道在两个链接、两次发布、不到 20 分钟内全部失效，<strong data-page-node-id="59gipSA6ly7unBzSsnkFKR">不作为交付手段</strong>。</p>
-<h3 data-page-node-id="RZVHFaMBdiQYUcDRNVtAGj">6.4 决策记录：托管方案选择</h3>
-<p data-page-node-id="VGQlRMdcuVXrwtmaOZzaOe"><strong data-page-node-id="ncQ38zDvNlEHQm9ElVfl9g">已排除</strong>：</p>
-<ul data-page-node-id="EyiJ3qgsagmCPO6Z93ca7F"><li data-page-node-id="y6TGBr11YYyzB6YrKYf53I">GitHub Pages —— 本机连不上 github.com</li><li data-page-node-id="QErPeDfgWIgbkBG2sSmFji">WorkBuddy 内置发布 —— 实测不可靠</li></ul>
-<p data-page-node-id="6OZNVOTx7qvcmtSA9l5rYL"><strong data-page-node-id="GkuzpoYiL9ta1dsBblnbah">已选定</strong>： 1. <strong data-page-node-id="YRUUNLwZab6m1jwExdM8wD">便携版单文件</strong>（首选，已交付）—— 零依赖、离线可用、永不失效 2. <strong data-page-node-id="XlBp1N5JKCMJdYFjOYCivl">腾讯云 COS</strong>（进行中，待密钥）—— 国内访问快</p>
-<p data-page-node-id="ZNYJtUo2kadfzP58GuVj2c"><strong data-page-node-id="SzeB09x5ZtlnJdi7l9vV6G">COS 已知风险</strong>：腾讯云 COS 的默认域名常常不允许直接用浏览器打开网页（强制下载或 403），此时需绑定<strong data-page-node-id="rGmRTDhLpii2J670cOTfOP">已备案的自定义域名</strong>。脚本内置自动探测，失败时提示改用<strong data-page-node-id="J38UhB5vYHetsh79ind8eE">腾讯云 CloudBase 静态托管</strong>（提供可直接访问、无需备案的 <code data-page-node-id="gOKrUTEI4KhO7TmTcmyXJK">*.tcloudbaseapp.com</code> 默认域名）。</p>
-<h3 data-page-node-id="kmV7mr1pm0nKgiDetof0a4">6.5 部署命令备忘</h3>
-<p data-page-node-id="5oK88MFohUhotX5CJKdaZY"><strong data-page-node-id="MYIGInveEBpmxmFFbRRsI9">构建</strong>：</p>
-<pre data-page-node-id="ePioBvKKKxcVUKNt0CFz8I"><code data-page-node-id="x9UINrtD9WSv1DDcOoi6Sm">cd /Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词
+<p><strong>约束</strong>：</p>
+<ul><li><code>id</code> 必须与图片目录名一致（<code>Text1</code> ↔ <code>images/Text1/</code>）</li><li>图片命名 <code>NN_slug.png</code>，slug = 单词小写且 <code>-</code>/空格/<code>/</code> 替换为 <code>_</code></li><li>例：<code>self-esteem</code> → <code>14_self_esteem.png</code></li></ul>
+<h3>4.4 当前词表（Text 1，15 词）</h3>
+<table><thead><tr><th>#</th><th>单词</th><th>词性</th><th>音标</th></tr></thead><tbody><tr><td>1</td><td>accountable</td><td>adjective</td><td>/əˈkaʊntəbl/</td></tr><tr><td>2</td><td>advise</td><td>verb</td><td>/ədˈvaɪz/</td></tr><tr><td>3</td><td>consider</td><td>verb</td><td>/kənˈsɪdə(r)/</td></tr><tr><td>4</td><td>costume</td><td>noun</td><td>/ˈkɒstjuːm/</td></tr><tr><td>5</td><td>desperately</td><td>adverb</td><td>/ˈdespərətli/</td></tr><tr><td>6</td><td>hesitate</td><td>verb</td><td>/ˈhezɪteɪt/</td></tr><tr><td>7</td><td>humiliate</td><td>verb</td><td>/hjuːˈmɪlieɪt/</td></tr><tr><td>8</td><td>individual</td><td>noun</td><td>/ˌɪndɪˈvɪdʒuəl/</td></tr><tr><td>9</td><td>inspiration</td><td>noun</td><td>/ˌɪnspəˈreɪʃn/</td></tr><tr><td>10</td><td>interrupt</td><td>verb</td><td>/ˌɪntəˈrʌpt/</td></tr><tr><td>11</td><td>juggle</td><td>verb</td><td>/ˈdʒʌɡl/</td></tr><tr><td>12</td><td>resentful</td><td>adjective</td><td>/rɪˈzentfl/</td></tr><tr><td>13</td><td>routine</td><td>noun</td><td>/ruːˈtiːn/</td></tr><tr><td>14</td><td>self-esteem</td><td>noun</td><td>/ˌself ɪˈstiːm/</td></tr><tr><td>15</td><td>uncomfortably</td><td>adverb</td><td>/ʌnˈkʌmftəbli/</td></tr></tbody></table>
+<hr>
+<h2>五、产品功能</h2>
+<p><strong>1. Cards —— 主学习闭环</strong></p>
+<ul><li>仅显示插画；点图后缩小并出现下划线格子（数量 = 字母数；连字符单独显示且不计入输入）</li><li>边打边填格，输满自动判定；回车可提前判定</li><li>拼对 → 绿色 ✓ → 0.7 秒后进入结果页并自动朗读</li><li>拼错 → 红色抖动 → 显示正确拼写 → 2.2 秒后清空重拼</li><li><code>Reveal answer</code> 直接看答案（标红）</li><li>结果页：词性、单词、音标、英文释义、用法提示、例句，单词与例句各有独立朗读按钮</li><li>导航：Prev / Shuffle / Next；全部掌握后显示完成页</li></ul>
+<p><strong>2. Quiz —— 反向测验</strong></p>
+<ul><li>给英文释义四选一，<strong>无图</strong></li><li>实时计分；答错停留更久（2.8s vs 1.5s）并朗读</li><li>结束按正确率反馈（≥90 🏆 / ≥70 👏 / 其余 💪），列出全部错词及释义</li></ul>
+<p><strong>3. List —— 词表</strong></p>
+<ul><li>一屏看完全部单词：缩略图 + 单词 + 音标 + 释义，点任意一行朗读</li></ul>
+<p><strong>4. 发音设置</strong></p>
+<ul><li>自动优选女声（按 natural/neural/online/samantha/karen 等关键词打分）</li><li>可调 voice / rate（默认 0.88）/ pitch（默认 1.08）</li><li>音源三档：Auto / Device only / Online human voice（有道 TTS，需联网）</li></ul>
+<p><strong>进度存储</strong>：按单元独立存 localStorage（key = <code>vocab_done_&lt;UnitId&gt;</code>），换单元不丢，<strong>设备间不互通</strong>。</p>
+<hr>
+<h2>六、知识库</h2>
+<h3>6.1 环境事实（实测）</h3>
+<table><thead><tr><th>项</th><th>状态</th></tr></thead><tbody><tr><td>Python 隔离环境</td><td><code>/Users/H.Sheng/.workbuddy/binaries/python/envs/default</code>（Pillow 12.3.0）</td></tr><tr><td>github.com</td><td><strong>不可达</strong>（HTTPS 超时，且无 SSH 密钥）</td></tr><tr><td>gitee.com / netlify.com / vercel.com / surge.sh</td><td>可达</td></tr><tr><td>cloud.tencent.com / cos.ap-shanghai.myqcloud.com</td><td>可达</td></tr><tr><td>沙箱内 pip 安装</td><td><strong>受限</strong> —— mkdir 被策略拦截（EEXIST，改 TMPDIR 无效）</td></tr></tbody></table>
+<h3>6.2 已踩过的坑</h3>
+<p>1. <strong>zip 中文文件名编码</strong> —— 包内中文名为 cp437 编码，需用 <code>filename.encode('cp437').decode('utf-8')</code> 还原，直接 <code>unzip</code> 会乱码。 2. <strong>图片生成不能并行</strong> —— 并行会写同名文件互相覆盖（曾 5 张只剩 2 张，白花积分）。必须一次一张，拿到立刻改名。 3. <strong>图片生成 <code>output_dir</code> 参数无效</strong> —— 图落默认目录，改名步骤不能省。 4. <strong>原图 PNG 不能丢</strong> —— 成品被覆盖后没有原图就重建不出来。 5. <strong>WorkBuddy 内置发布不可靠</strong> —— 见 6.3。 6. <strong>预览服务会污染 HTML</strong> —— 预览便携版时被注入 4 KB 的 <code>data-page-node-id</code> 属性。交付前必须校验 MD5。 7. <strong>pip 在沙箱内装不上包</strong> —— 改用标准库实现（COS 签名脚本即如此）。</p>
+<h3>6.3 决策记录：为什么放弃内置发布</h3>
+<table><thead><tr><th>时间</th><th>链接</th><th>实测结果</th></tr></thead><tbody><tr><td>09:59</td><td><code>*.app.workbuddy.link</code></td><td>200（当时正常）</td></tr><tr><td>10:57</td><td>同上</td><td><strong>404「链接已失效」</strong></td></tr><tr><td>10:59</td><td><code>*.e2b.sh3.sandbox.cloudstudio.club</code></td><td>200（当时正常）</td></tr><tr><td>11:11</td><td>同上</td><td><strong>403</strong>；旧链接 <strong>502</strong></td></tr></tbody></table>
+<p><strong>结论</strong>：该渠道在两个链接、两次发布、不到 20 分钟内全部失效，<strong>不作为交付手段</strong>。</p>
+<h3>6.4 决策记录：托管方案选择</h3>
+<p><strong>已排除</strong>：</p>
+<ul><li>GitHub Pages —— 本机连不上 github.com</li><li>WorkBuddy 内置发布 —— 实测不可靠</li></ul>
+<p><strong>已选定</strong>： 1. <strong>便携版单文件</strong>（首选，已交付）—— 零依赖、离线可用、永不失效 2. <strong>腾讯云 COS</strong>（进行中，待密钥）—— 国内访问快</p>
+<p><strong>COS 已知风险</strong>：腾讯云 COS 的默认域名常常不允许直接用浏览器打开网页（强制下载或 403），此时需绑定<strong>已备案的自定义域名</strong>。脚本内置自动探测，失败时提示改用<strong>腾讯云 CloudBase 静态托管</strong>（提供可直接访问、无需备案的 <code>*.tcloudbaseapp.com</code> 默认域名）。</p>
+<h3>6.5 部署命令备忘</h3>
+<p><strong>构建</strong>：</p>
+<pre><code>cd /Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词
 /Users/H.Sheng/.workbuddy/binaries/python/envs/default/bin/python vocab-builder/build.py</code></pre>
-<p data-page-node-id="hWeOmSsAaTosdpvD2pAchk"><strong data-page-node-id="afVLKYmYGZKqLpDQd1lJul">部署到 COS</strong>（需先提供密钥）：</p>
-<pre data-page-node-id="oMbzyCmsaRLs0dWuCsElMF"><code data-page-node-id="xzBHbsEJ9xlsNgulYS1qLQ">export COS_SECRET_ID=AKIDxxxxxxxx
+<p><strong>部署到 COS</strong>（需先提供密钥）：</p>
+<pre><code>export COS_SECRET_ID=AKIDxxxxxxxx
 export COS_SECRET_KEY=xxxxxxxx
 export COS_REGION=ap-shanghai
 export COS_BUCKET=&lt;桶名&gt;-&lt;appid&gt;
 /Users/H.Sheng/.workbuddy/binaries/python/envs/default/bin/python vocab-builder/deploy_cos.py</code></pre>
-<p data-page-node-id="5xv39oTneMkumVzcSfBUfz">脚本自动完成：建桶 → 设公有读 → 开静态网站 → 上传 → 探测公网 URL 是否真能打开。</p>
-<p data-page-node-id="4V0oG2T6YKLm1Mzz4jJ9q8"><strong data-page-node-id="fe0zVSt9v0zO6h2srIgzXI">密钥获取</strong>：https://console.cloud.tencent.com/cam/capi</p>
-<hr data-page-node-id="eUL1Ix7maepB0Dc4zIoMtB">
-<h2 data-page-node-id="UDkth65Tq4aoeqyGX1Ewhs">七、验证记录汇总</h2>
-<table data-page-node-id="YU6Gs5IyVc2yxZ4YSapvdA"><thead data-page-node-id="9cPnKPNjQPmx7zWx111stX"><tr data-page-node-id="YMBFJSiZQoBsE9B5qKgQN9"><th data-page-node-id="BURag1cK0pCg589Zc2keBP">验证项</th><th data-page-node-id="aHKmxRFi0EbleSl6yxsh1u">方法</th><th data-page-node-id="k4SJ1v3MjLx2rUjH81JUFg">结果</th></tr></thead><tbody data-page-node-id="NSCPufar5vWRIuyFDWpHG6"><tr data-page-node-id="GRH9wuKVkabRyE7Ot22A2A"><td data-page-node-id="io71uhidHRsPks1NyXmyYH">资产完整性</td><td data-page-node-id="HIhWtP8rE7txCdckLNTxBZ">文件计数</td><td data-page-node-id="D4RFjVlSuXf4pZK6iTD1xZ">15 词 / 15 PNG / 15 JPG ✓</td></tr><tr data-page-node-id="x7xBNw2zqgKGLDRJx6mQYI"><td data-page-node-id="P14GKF8fMSOtflokupxnPT">构建闭环</td><td data-page-node-id="sYKahwr1Mu83f9qb4QK6yx">运行 build.py</td><td data-page-node-id="t6BfAI6YSmPsgt4Afalbiw"><code data-page-node-id="tUhR8qZkG4RobmjHsl3iy6">images ok</code>，无缺失图 ✓</td></tr><tr data-page-node-id="7aMYfTTILMcOGZaBOfQvq8"><td data-page-node-id="W5of7YA9zs1mQ39hb8u3qO">数据一致性</td><td data-page-node-id="m8RyJluM6DiTCywGoG8DVK">重建产物 vs 沙箱产物</td><td data-page-node-id="GbvrHWDtTjHRPgYCYSZnJL"><strong data-page-node-id="Go03UFepUXIBAOZgbybW7m">字节级一致（cmp 通过）</strong> ✓</td></tr><tr data-page-node-id="DVRdHwuDxxECUD8CplhnwM"><td data-page-node-id="cyUogCElhyH6t6vkOTiaBJ">数据注入</td><td data-page-node-id="6Fo6x1PKkt50mFGl0l4hSh">解析 UNITS 常量</td><td data-page-node-id="Ih4Kceczs2WOn43mAsEoh4">1 单元 / 15 词 / 15 图 ✓</td></tr><tr data-page-node-id="U5QbCNp5wmgkDH3CaOaAQR"><td data-page-node-id="FRQrPfwPjVSAK8w9AED3of">占位符替换</td><td data-page-node-id="cToVExtjuMkgdgQeFSWDTr">grep <code data-page-node-id="PXUFlXIyo50LesR8RlOHp0">__UNITDATA__</code></td><td data-page-node-id="r8le4s1HGXsMgGs9MXrLYt">已替换，无残留 ✓</td></tr><tr data-page-node-id="P9TqR5rsND1iwDXAeG2GXu"><td data-page-node-id="i9gpym7WJgsuo0kjBb8GHm">离线自包含</td><td data-page-node-id="OsjI3GpxQnAY7Cl0LgkVCZ">统计外部 JS/CSS</td><td data-page-node-id="qDnjMLEcoVbkQBdwLPrPdh"><strong data-page-node-id="LFxFOhIh274SBb0bUEJOyg">0 个</strong> ✓</td></tr><tr data-page-node-id="9FaajONvcdQIMb6NznLijv"><td data-page-node-id="6cuAONiz5HAi0ipFJeFRbd">四份成品一致</td><td data-page-node-id="7RArdvWupXiBPG9RBEedpb">MD5</td><td data-page-node-id="GM5gFhXKUbmGEgu8jD0Bx8">全部 <code data-page-node-id="VA7CAp7GElKeilqk8EFWJ8">4fc7287c...</code> ✓</td></tr><tr data-page-node-id="V02xrpYfSbY8IOJbecku2L"><td data-page-node-id="65QHeya7MqocHFoFF6IFLq">便携版纯净度</td><td data-page-node-id="fxF0yKCsKGBpSyR4cXZSMw">grep 注入属性</td><td data-page-node-id="wJcPTTbSVOf7EpFE6kInO3">0 处残留 ✓</td></tr><tr data-page-node-id="4nG905fD6uFA85DPibaP3B"><td data-page-node-id="SDD3SwzM50cpHmBxcRWZnT">COS 签名链路</td><td data-page-node-id="zYhxUcskCU8lUlFNzTQzW7">假密钥干跑</td><td data-page-node-id="aYTTDGaAddwr7RTSBDVgHI">403（请求正确到达，密钥无效为预期） ✓</td></tr></tbody></table>
-<hr data-page-node-id="Ad2Dte3Yt9ytPbm48rRV3o">
-<h2 data-page-node-id="p7vq5LCHkpOQfeytLtZPPD">八、待办与下一步</h2>
-<p data-page-node-id="nOljnu4G7ZEo1kJFvHVqiy"><strong data-page-node-id="qknubndCBYrxov1JK8G3um">进行中</strong></p>
-<ul data-page-node-id="0Z96kYWWk6I97YTfBdT010"><li data-page-node-id="7FYIly9Uw8JFUFAWMG0e9B">[ ] 腾讯云 COS 部署 —— 待提供 SecretId / SecretKey / 桶名；若有已备案域名请一并告知</li></ul>
-<p data-page-node-id="WHuwH9Jmm7mqwarEVBxNcZ"><strong data-page-node-id="PcmDOECcPEFvBjBqLZbkB0">后续可做</strong></p>
-<ul data-page-node-id="9sFThsfAsPwYptenobf4vE"><li data-page-node-id="qWBesXmcFU67bTrDuoSOU2">[ ] 新增单元 Text 2：提供词表 → 确认清单 → 报积分 → 生成插画 → 写入 JSON → 构建 → 交付</li><li data-page-node-id="9WlLsPBqodK1fCsi2EV96g">[ ] 若 COS 默认域名受限，切换 CloudBase 静态托管</li></ul>
-<p data-page-node-id="S8MDopY5W4TJGjBcm0bQrX"><strong data-page-node-id="2JSMAn8cPmHgoFMNTvCegF">给使用者的建议</strong></p>
-<ul data-page-node-id="ujRI6evEcNqLjyR2GjOWvO"><li data-page-node-id="KjSTRlbIHzvrPWp0cXsuFb">便携版发微信给米米，手机点开即用，建议在浏览器里「添加到主屏幕」，避免重复复制</li><li data-page-node-id="i6aTHBCfUcoxzaMojflI8j">进度存在各自浏览器本地，换设备需重新标记</li></ul>
-<hr data-page-node-id="2sV2Ldk9AB7l8KOHzPvSd3">
-<h2 data-page-node-id="ARP9rLzvHhBRMmu9rGXK0F">九、备份说明</h2>
-<p data-page-node-id="zhDVOY418A7ZaFe68L5GPp">整个 <code data-page-node-id="ZctO4BtXnQpPuUwM9adDwh">007_米米背单词/</code> 目录即全部资产，拷走即可继续工作（构建脚本路径自解析，搬到任何位置都能跑）。</p>
-<p data-page-node-id="V5sTbIHgbKrgBUVQPoZZ4G"><strong data-page-node-id="nDY1XvuUNnsnH2TpmIRTDl">增量同步</strong>（新增单元时只需搬）：</p>
-<ul data-page-node-id="dOAgFJicNzdveRa1PI6QQT"><li data-page-node-id="mPXMBg0xxWeCw5I3WCBfQr"><code data-page-node-id="VNkFUCiT8V3tTNurNqrEOr">vocab-builder/units/TextN.json</code></li><li data-page-node-id="KKGrbHuqR4Hkp1AOKhrJHP"><code data-page-node-id="qpROI6SOeVVLULVb2pzYu3">vocab-builder/images/TextN/</code></li><li data-page-node-id="lrUXEuyPoZBoLGkrzMUurq">重新生成的 HTML</li></ul>
-<p data-page-node-id="jfYKaCMhh00DuB1xdQGMBM"><strong data-page-node-id="FWFaq4bmZBqZtzmqNkssr2">本记录文件</strong>：<code data-page-node-id="vOE9X7ZKFVL6NoknlVaUjm">米米背单词-工作记录.md</code> / <code data-page-node-id="vbxjJoYQ0c43ZTwBuBiOS6">.html</code>，随项目一同备份。</p>
+<p>脚本自动完成：建桶 → 设公有读 → 开静态网站 → 上传 → 探测公网 URL 是否真能打开。</p>
+<p><strong>密钥获取</strong>：https://console.cloud.tencent.com/cam/capi</p>
+<hr>
+<h2>七、验证记录汇总</h2>
+<table><thead><tr><th>验证项</th><th>方法</th><th>结果</th></tr></thead><tbody><tr><td>资产完整性</td><td>文件计数</td><td>15 词 / 15 PNG / 15 JPG ✓</td></tr><tr><td>构建闭环</td><td>运行 build.py</td><td><code>images ok</code>，无缺失图 ✓</td></tr><tr><td>数据一致性</td><td>重建产物 vs 沙箱产物</td><td><strong>字节级一致（cmp 通过）</strong> ✓</td></tr><tr><td>数据注入</td><td>解析 UNITS 常量</td><td>1 单元 / 15 词 / 15 图 ✓</td></tr><tr><td>占位符替换</td><td>grep <code>__UNITDATA__</code></td><td>已替换，无残留 ✓</td></tr><tr><td>离线自包含</td><td>统计外部 JS/CSS</td><td><strong>0 个</strong> ✓</td></tr><tr><td>四份成品一致</td><td>MD5</td><td>全部 <code>4fc7287c...</code> ✓</td></tr><tr><td>便携版纯净度</td><td>grep 注入属性</td><td>0 处残留 ✓</td></tr><tr><td>COS 签名链路</td><td>假密钥干跑</td><td>403（请求正确到达，密钥无效为预期） ✓</td></tr></tbody></table>
+<hr>
+<h2>八、待办与下一步</h2>
+<p><strong>进行中</strong></p>
+<ul><li>[ ] 腾讯云 COS 部署 —— 待提供 SecretId / SecretKey / 桶名；若有已备案域名请一并告知</li></ul>
+<p><strong>后续可做</strong></p>
+<ul><li>[ ] 新增单元 Text 2：提供词表 → 确认清单 → 报积分 → 生成插画 → 写入 JSON → 构建 → 交付</li><li>[ ] 若 COS 默认域名受限，切换 CloudBase 静态托管</li></ul>
+<p><strong>给使用者的建议</strong></p>
+<ul><li>便携版发微信给米米，手机点开即用，建议在浏览器里「添加到主屏幕」，避免重复复制</li><li>进度存在各自浏览器本地，换设备需重新标记</li></ul>
+<hr>
+<h2>九、备份说明</h2>
+<p>整个 <code>007_米米背单词/</code> 目录即全部资产，拷走即可继续工作（构建脚本路径自解析，搬到任何位置都能跑）。</p>
+<p><strong>增量同步</strong>（新增单元时只需搬）：</p>
+<ul><li><code>vocab-builder/units/TextN.json</code></li><li><code>vocab-builder/images/TextN/</code></li><li>重新生成的 HTML</li></ul>
+<p><strong>本记录文件</strong>：<code>米米背单词-工作记录.md</code> / <code>.html</code>，随项目一同备份。</p>
+<hr>
+<h2>十、补充：GitHub Pages 上线与性能优化（2026-09-09 18:30）</h2>
+<h3>10.1 Pages 正式上线</h3>
+<table><thead><tr><th>项</th><th>内容</th></tr></thead><tbody><tr><td>地址</td><td>https://dashopera.github.io/Ideha-vocab/</td></tr><tr><td>仓库</td><td><code>git@github.com:dashopera/Ideha-vocab.git</code>（main / root）</td></tr><tr><td>开启方式</td><td>Settings → Pages → Deploy from a branch → main / (root)</td></tr><tr><td>托管方</td><td>GitHub 官方，永久有效</td></tr></tbody></table>
+<h3>10.2 性能问题与改造</h3>
+<p><strong>问题</strong>：Pages 首次验证内容正确，但速度极差。631 KB 内嵌版三次实测耗时 <strong>12.9s / 60s（超时，仅下载 125 KB）/ 32s</strong>。</p>
+<p><strong>量化定位</strong>：成品 617 KB 中图片 base64 占 <strong>580 KB（94%）</strong>，HTML/JS 仅 37 KB。单个大文件在慢链上传输效率极低。</p>
+<p><strong>方案：双版本输出</strong></p>
+<table><thead><tr><th></th><th>内嵌版</th><th>外链版</th></tr></thead><tbody><tr><td>文件</td><td><code>背单词-学习卡片.html</code>、<code>米米背单词-便携版.html</code></td><td>根 <code>index.html</code>、<code>site/index.html</code></td></tr><tr><td>图片</td><td>base64 内嵌</td><td>独立 <code>images/TextN/*.jpg</code></td></tr><tr><td>体积</td><td>631 KB（单文件）</td><td>37 KB HTML + 435 KB 图片</td></tr><tr><td>用途</td><td>发微信/邮件、离线、永久可用</td><td>GitHub Pages 在线访问</td></tr></tbody></table>
+<p><strong>关键约束</strong>：GitHub Pages 从仓库根目录发布，Folder 只能选 <code>/ (root)</code> 或 <code>/docs</code>，不能指向 <code>site/</code>。因此外链版必须落在根 <code>index.html</code>。</p>
+<p><strong>改造后实测</strong>（连续三次）：0.8–1.0 秒首屏（首次部署冷启动 10.6s）。15 张图片全部 HTTP 200。</p>
+<h3>10.3 预览污染根治</h3>
+<p>预览服务会在打开 HTML 时注入 <code>data-page-node-id</code> 属性，本项目已因此三次交付/提交污染版本。本次从机制上解决：</p>
+<p>1. <strong><code>vocab-builder/sanitize.py</code></strong> —— 正则剔除注入属性（本次一次清除 204 处）+ 内嵌版一致性自检，幂等可反复运行，<code>--check</code> 参数只校验不修改。 2. <strong><code>.git/hooks/pre-commit</code></strong> —— 提交时自动执行 sanitize，校验不通过则中止提交，净化结果自动 <code>git add</code>。</p>
+<p>本次两次 commit 均由钩子自动净化，输出「✓ 内嵌版两份一致」。</p>
+<h3>10.4 过程中的一处自伤与修复</h3>
+<p>为支持外链版，给词数据加了 <code>_href</code> 字段，但忘记在内嵌版剔除，导致内嵌版 MD5 从 <code>f3586d5e</code> 漂移到 <code>a35b6012</code>（+631 字节）。</p>
+<p>修复：<code>copy.deepcopy</code> 后 <code>w.pop("_href", None)</code>。内嵌版回归基准 <code>f3586d5e046d704d646bb912c3b114cf</code>（631,337 字节）。</p>
+<h3>10.5 更新后的标准流程</h3>
+<pre><code>cd /Users/H.Sheng/WorkBuddy/2026-09-09-09-42-17/mimi-vocab/007_米米背单词
+PY=/Users/H.Sheng/.workbuddy/binaries/python/envs/default/bin/python
+$PY vocab-builder/build.py       # 双版本输出
+$PY vocab-builder/sanitize.py     # 净化 + 自检
+git add -A &amp;&amp; git commit -m &quot;说明&quot; &amp;&amp; git push</code></pre>
+<p>推送后 Pages 约 1 分钟完成重建。</p>
 <div style="margin-top:44px;padding-top:14px;border-top:1px solid #e2ddd2;
-  font-size:12px;color:#a89f8c;text-align:center;" data-page-node-id="HBwCDhDoqHsBuAWYOFXbZ4">
+  font-size:12px;color:#a89f8c;text-align:center;">
   米米背单词 · 工作记录 · 2026-09-09 · 本页可直接打印或导出为 PDF
 </div>
 </body></html>
